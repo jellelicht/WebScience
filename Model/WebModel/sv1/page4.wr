@@ -1,0 +1,93 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#page4" name="Registration" landmark="false" ignoreMasterPage="true" layout:pageLayout="WRDefault/Empty" gr:x="565" gr:y="15">
+  <ContentUnits>
+    <EntryUnit id="sv1#page4#enu2" name="Registration" linkOrder="sv1#page4#enu2#ln4 sv1#page4#enu2#ln8" gr:x="0" gr:y="0" fieldOrder="sv1#page4#enu2#fld5 sv1#page4#enu2#fld3 sv1#page4#enu2#fld4 sv1#page4#enu2#fld9 sv1#page4#enu2#fld19">
+      <Field id="sv1#page4#enu2#fld3" name="Username" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv1#page4#enu2#fld3#mnd1" name="Mandatory Field"/>
+          <CollectionValidationRule id="sv1#page4#enu2#fld3#clc1" name="Validate Unique Field" predicate="notIn" ignoreCase="true" entity="User" attribute="userName"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#page4#enu2#fld4" name="Password" type="password" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv1#page4#enu2#fld4#mnd2" name="Mandatory Field"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#page4#enu2#fld5" name="Email" type="string" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv1#page4#enu2#fld5#mnd3" name="Mandatory Field"/>
+          <CollectionValidationRule id="sv1#page4#enu2#fld5#clc2" name="Validate Unique Field" predicate="notIn" entity="User" attribute="email"/>
+          <EMailValidationRule id="sv1#page4#enu2#fld5#email1" name="Validate EMail Field"/>
+        </VRules>
+      </Field>
+      <Field id="sv1#page4#enu2#fld9" name="Confirm Password" type="password" modifiable="true">
+        <VRules>
+          <MandatoryValidationRule id="sv1#page4#enu2#fld9#mnd7" name="Mandatory Field"/>
+          <CompareValidationRule id="sv1#page4#enu2#fld9#cmp1" name="Validate Compare" predicate="eq" valueField="sv1#page4#enu2#fld4"/>
+        </VRules>
+      </Field>
+      <VRules/>
+      <Link id="sv1#page4#enu2#ln4" name="Save" to="sv1#opg1#cru1" type="normal" validate="true" automaticCoupling="true"/>
+      <Field id="sv1#page4#enu2#fld19" name="Name" type="string" modifiable="true"/>
+      <Link id="sv1#page4#enu2#ln8" name="Flow8" to="sv1#opg1#cru3" type="normal" validate="true">
+        <LinkParameter id="sv1#page4#enu2#ln8#par10" name="Name_name" source="sv1#page4#enu2#fld19" target="sv1#opg1#cru3.ent1#att3"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page4#enu2" manualFields="true" manualFieldOrder="sv1#page4#enu2#fld5 sv1#page4#enu2#fld3 sv1#page4#enu2#fld4 sv1#page4#enu2#fld9" manualLinks="true" layout:frameLayout="None">
+          <layout:Field field="sv1#page4#enu2#fld5"/>
+          <layout:Field field="sv1#page4#enu2#fld3"/>
+          <layout:Field field="sv1#page4#enu2#fld4"/>
+          <layout:Field field="sv1#page4#enu2#fld9"/>
+          <layout:LayoutParameter name="error-position" value="right" type="unit"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="10"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="2">
+        <layout:Unit unitId="sv1#page4#enu2" manualFields="true" layout:frameLayout="None">
+          <layout:Link link="sv1#page4#enu2#ln4"/>
+          <layout:Link link="sv1#page4#enu2#ln8"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

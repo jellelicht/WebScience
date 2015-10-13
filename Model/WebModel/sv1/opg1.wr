@@ -1,0 +1,15 @@
+<OperationGroup xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1#opg1" name="Create User Profile and Log In" transaction="true" gr:x="895" gr:y="95">
+  <OperationUnits>
+    <CreateUnit id="sv1#opg1#cru1" name="Jelldfjlkj" gr:x="0" gr:y="80" entity="User" skipBlankRecords="true" notBlankAttributes="userOID userName password email">
+      <Link id="sv1#opg1#cru1#ln5" name="Link3" to="sv1#opg1#lgu2" type="transport" validate="true">
+        <LinkParameter id="sv1#opg1#cru1#ln5#par8" name="Username" source="userNameArray" target="sv1#opg1#lgu2.username"/>
+        <LinkParameter id="sv1#opg1#cru1#ln5#par9" name="Password" source="passwordArray" target="sv1#opg1#lgu2.password"/>
+      </Link>
+      <OKLink id="sv1#opg1#cru1#oln6" name="OKFlow6" to="sv1#opg1#lgu2" automaticCoupling="true" gr:bendpoints="70,56,-80,-29"/>
+    </CreateUnit>
+    <LoginUnit id="sv1#opg1#lgu2" name="Login" gr:x="285" gr:y="150">
+      <OKLink id="sv1#opg1#lgu2#oln7" name="OKFlow7" to="sv1#page2" automaticCoupling="true"/>
+    </LoginUnit>
+    <CreateUnit gr:x="85" gr:y="0" id="sv1#opg1#cru3" name="Create3" entity="ent1"/>
+  </OperationUnits>
+</OperationGroup>

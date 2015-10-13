@@ -170,6 +170,5 @@
       <db:JoinColumn attribute="ent8#att27" name="completedtask_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="LocalDB" type="MySQL" url="jdbc:mysql://localhost:3306/webesi" username="root" cryptedPassword="true" password="YWFyZGJlaQ==">
-  </db:Database>
+  <db:Database id="db1" name="LocalDB" type="MySQL" url="jdbc:mysql://localhost:3306/webesi" username="root" cryptedPassword="true" password="YWFyZGJlaQ=="/>
 </DataModel>
