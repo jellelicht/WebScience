@@ -1,0 +1,37 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="895" gr:y="375" id="sv3#page1" name="Give Answer">
+  <ContentUnits>
+    <EntryUnit id="sv3#page1#enu1" name="Answer" linkOrder="sv3#page1#enu1#ln1" gr:x="0" gr:y="0" entity="ent7">
+      <Field id="sv3#page1#enu1#fld1" name="Value" type="string" modifiable="true"/>
+      <Field id="sv3#page1#enu1#fld2" name="Evaluation" type="string" modifiable="true"/>
+      <Link id="sv3#page1#enu1#ln1" name="Add" to="sv3#cru7" type="normal" validate="true">
+        <LinkParameter id="sv3#page1#enu1#ln1#par2" name="Answer Object_Answer Object" source="entityBean" target="sv3#cru7.entityBeans"/>
+        <LinkParameter id="sv3#page1#enu1#ln1#par4" name="Evaluation_evaluation" source="sv3#page1#enu1#fld2" target="sv3#cru7.ent7#att26"/>
+        <LinkParameter id="sv3#page1#enu1#ln1#par5" name="Key [oid]_oid" source="key.ent7#att24" target="sv3#cru7.ent7#att24"/>
+        <LinkParameter id="sv3#page1#enu1#ln1#par6" name="Value_value" source="sv3#page1#enu1#fld1" target="sv3#cru7.ent7#att25"/>
+        <LinkParameter id="sv3#page1#enu1#ln1#par14" name="oid_PASSING" sourceLinkParameter="sv3#page12#dau5#ln3#par13" passing="true"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page1#enu1">
+          <layout:Field field="sv3#page1#enu1#fld1"/>
+          <layout:Field field="sv3#page1#enu1#fld2"/>
+          <layout:Link link="sv3#page1#enu1#ln1"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

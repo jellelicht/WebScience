@@ -1,0 +1,7 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4" name="Requester Home" protected="true" homePage="sv4#page11">
+  <OperationUnits>
+    <ModuleInstanceUnit gr:x="15" gr:y="475" id="sv4#miu2" action="true" name="CreateCampaign" moduleId="mov2#opm2">
+      <OKLink id="sv4#miu2#oln12" name="OKFlow12" to="sv4#page11" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+  </OperationUnits>
+</SiteView>

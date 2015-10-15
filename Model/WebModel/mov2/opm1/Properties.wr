@@ -1,0 +1,21 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="175" gr:y="395" id="mov2#opm1" name="Add answer">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm1#icu1" gr:x="30" gr:y="60" linkOrder="mov2#opm1#icu1#ln2">
+      <InputCollectorParameter id="mov2#opm1#icu1#icp6" name="oid_PASSING"/>
+      <InputCollectorParameter id="mov2#opm1#icu1#icp7" name="evaluation"/>
+      <InputCollectorParameter id="mov2#opm1#icu1#icp8" name="value"/>
+      <InputCollectorParameter id="mov2#opm1#icu1#icp9" name="item_oid"/>
+      <Link id="mov2#opm1#icu1#ln2" name="Flow2" to="mov2#opm1#cru1" type="transport" validate="true">
+        <LinkParameter id="mov2#opm1#icu1#ln2#par16" name="evaluation_evaluation" source="mov2#opm1#icu1#icp7" target="mov2#opm1#cru1.ent7#att26"/>
+        <LinkParameter id="mov2#opm1#icu1#ln2#par26" name="item_oid_oid" source="mov2#opm1#icu1#icp9" target="mov2#opm1#cru1.ent7#att24"/>
+        <LinkParameter id="mov2#opm1#icu1#ln2#par27" name="value_value" source="mov2#opm1#icu1#icp8" target="mov2#opm1#cru1.ent7#att25"/>
+        <LinkParameter id="mov2#opm1#icu1#ln2#par28" name="oid_PASSING" source="mov2#opm1#icu1#icp6" passing="true"/>
+      </Link>
+    </InputCollectorUnit>
+    <OKCollectorUnit gr:x="725" gr:y="85" id="mov2#opm1#okcu3" name="OK Port3"/>
+    <CreateUnit gr:x="330" gr:y="85" id="mov2#opm1#cru1" name="Add Answer" entity="ent7" linkOrder="mov2#opm1#cru1#ln4">
+      <Link id="mov2#opm1#cru1#ln4" name="Flow4" to="mov2#opm1#cru2" automaticCoupling="true" type="transport" validate="true"/>
+    </CreateUnit>
+    <CreateUnit gr:x="500" gr:y="90" id="mov2#opm1#cru2" name="Add Answer to Item"/>
+  </OperationUnits>
+</OperationModule>

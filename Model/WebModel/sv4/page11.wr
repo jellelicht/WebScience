@@ -1,0 +1,76 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="370" gr:y="305" id="sv4#page11" name="Requester Home Page" protected="false">
+  <ContentUnits>
+    <PowerIndexUnit gr:x="0" gr:y="0" id="sv4#page11#pwu4" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att10 ent4#att11 ent4#att12"/>
+    <GetUnit gr:x="140" gr:y="5" id="sv4#page11#gtu4" name="GetCurrentUser" contextParameters="UserCtxParam">
+      <Link id="sv4#page11#gtu4#ln10" name="Flow10" to="sv4#page11#enu9" type="transport" validate="true">
+        <LinkParameter id="sv4#page11#gtu4#ln10#par17" name="UserCtxParam.oid_requester_oid" source="sv4#page11#gtu4.UserCtxParam" target="sv4#page11#enu9#fld29_slot"/>
+      </Link>
+    </GetUnit>
+    <EntryUnit id="sv4#page11#enu9" name="Create Campaign" gr:x="20" gr:y="135" linkOrder="sv4#page11#enu9#ln11">
+      <Field id="sv4#page11#enu9#fld27" name="name" type="string" modifiable="true"/>
+      <Field id="sv4#page11#enu9#fld28" name="budget" type="float" modifiable="true"/>
+      <Field id="sv4#page11#enu9#fld29" name="requester_oid" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Link id="sv4#page11#enu9#ln11" name="Add" to="sv4#miu2" type="normal" validate="true">
+        <LinkParameter id="sv4#page11#enu9#ln11#par18" name="budget_budget" source="sv4#page11#enu9#fld28" target="sv4#miu2.mov2#opm2#icu2#icp1"/>
+        <LinkParameter id="sv4#page11#enu9#ln11#par19" name="name_name" source="sv4#page11#enu9#fld27" target="sv4#miu2.mov2#opm2#icu2#icp4"/>
+        <LinkParameter id="sv4#page11#enu9#ln11#par20" name="requester_oid_requester_oid" source="sv4#page11#enu9#fld29" target="sv4#miu2.mov2#opm2#icu2#icp5"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page11#pwu4">
+          <layout:Attribute attribute="ent4#att10"/>
+          <layout:Attribute attribute="ent4#att11"/>
+          <layout:Attribute attribute="ent4#att12"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page11#enu9">
+          <layout:Field field="sv4#page11#enu9#fld27"/>
+          <layout:Field field="sv4#page11#enu9#fld28"/>
+          <layout:Link link="sv4#page11#enu9#ln11"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

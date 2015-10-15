@@ -1,0 +1,20 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm2" name="Create Campaign" gr:x="160" gr:y="95">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm2#icu2" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm2#icu2#icp1" name="budget"/>
+      <InputCollectorParameter id="mov2#opm2#icu2#icp4" name="name"/>
+      <InputCollectorParameter id="mov2#opm2#icu2#icp5" name="requester_oid"/>
+      <OKLink id="mov2#opm2#icu2#oln10" name="OKFlowCreateCampaignInput" to="mov2#opm2#cru4">
+        <LinkParameter id="mov2#opm2#icu2#oln10#par23" name="budget_budget" source="mov2#opm2#icu2#icp1" target="mov2#opm2#cru4.ent4#att11"/>
+        <LinkParameter id="mov2#opm2#icu2#oln10#par24" name="name_name" source="mov2#opm2#icu2#icp4" target="mov2#opm2#cru4.ent4#att10"/>
+        <LinkParameter id="mov2#opm2#icu2#oln10#par25" name="0_status" sourceValue="0" target="mov2#opm2#cru4.ent4#att12"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <CreateUnit id="mov2#opm2#cru4" name="CreateCampaign" gr:x="305" gr:y="75" entity="ent4">
+      <OKLink id="mov2#opm2#cru4#oln11" name="OKFlowCreateCampaign" to="mov2#opm2#okcu2" automaticCoupling="true"/>
+      <KOLink id="mov2#opm2#cru4#kln7" name="KOFlowCreateCampaign" to="mov2#opm2#kocu1" automaticCoupling="true"/>
+    </CreateUnit>
+    <OKCollectorUnit id="mov2#opm2#okcu2" name="CreateCampaignSuccess" gr:x="480" gr:y="80"/>
+    <KOCollectorUnit id="mov2#opm2#kocu1" name="CreateCampaignFail" gr:x="480" gr:y="180"/>
+  </OperationUnits>
+</OperationModule>
