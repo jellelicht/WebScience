@@ -1,7 +1,32 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4" name="Requester Home" protected="true" homePage="sv4#page11">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4" name="Requester Home" protected="true" homePage="sv4#page11" landmarks="sv4#page3 sv4#page4">
   <OperationUnits>
     <ModuleInstanceUnit gr:x="15" gr:y="475" id="sv4#miu2" action="true" name="CreateCampaign" moduleId="mov2#opm2">
       <OKLink id="sv4#miu2#oln12" name="OKFlow12" to="sv4#page11" automaticCoupling="true"/>
     </ModuleInstanceUnit>
+    <LogoutUnit gr:x="740" gr:y="160" id="sv4#lou2" name="Logout" siteView="sv2"/>
+    <CreateUnit gr:x="1195" gr:y="455" id="sv4#cru3" name="AddItem" entity="ent5">
+      <OKLink id="sv4#cru3#oln2" name="OKFlow2" to="sv4#page3" automaticCoupling="true" gr:bendpoints="41,-234,196,-9"/>
+    </CreateUnit>
+    <DeleteUnit gr:x="870" gr:y="485" id="sv4#dlu1" name="Deleteitem" entity="ent5">
+      <Selector id="sv4#dlu1#su10" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#dlu1#su10#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#dlu1#oln3" name="OKFlow3" to="sv4#page3" automaticCoupling="true" gr:bendpoints="174,-36,14,224"/>
+    </DeleteUnit>
+    <CreateUnit gr:x="735" gr:y="800" id="sv4#cru5" name="Create5" entity="ent6">
+      <OKLink id="sv4#cru5#oln4" name="OKFlow4" to="sv4#page4" automaticCoupling="true"/>
+    </CreateUnit>
+    <DeleteUnit gr:x="290" gr:y="760" id="sv4#dlu2" name="Delete Task" entity="ent6">
+      <Selector id="sv4#dlu2#su12" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#dlu2#su12#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#dlu2#oln5" name="OKFlow5" to="sv4#page4" automaticCoupling="true"/>
+    </DeleteUnit>
+    <DeleteUnit gr:x="155" gr:y="330" id="sv4#dlu3" name="Delete3" entity="ent4">
+      <Selector id="sv4#dlu3#su13" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#dlu3#su13#kcond11" name="KeyCondition11" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#dlu3#oln6" name="OKFlow6" to="sv4#page11" automaticCoupling="true"/>
+    </DeleteUnit>
   </OperationUnits>
 </SiteView>

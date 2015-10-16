@@ -8,6 +8,7 @@
         <LinkParameter id="mov2#opm2#icu2#oln10#par23" name="budget_budget" source="mov2#opm2#icu2#icp1" target="mov2#opm2#cru4.ent4#att11"/>
         <LinkParameter id="mov2#opm2#icu2#oln10#par24" name="name_name" source="mov2#opm2#icu2#icp4" target="mov2#opm2#cru4.ent4#att10"/>
         <LinkParameter id="mov2#opm2#icu2#oln10#par25" name="0_status" sourceValue="0" target="mov2#opm2#cru4.ent4#att12"/>
+        <LinkParameter id="mov2#opm2#icu2#oln10#par39" name="requester_oid_Requester.oid(CampaignToRequester)" source="mov2#opm2#icu2#icp5" target="mov2#opm2#cru4.rel13#role25.ent2#att5"/>
       </OKLink>
     </InputCollectorUnit>
     <CreateUnit id="mov2#opm2#cru4" name="CreateCampaign" gr:x="305" gr:y="75" entity="ent4">

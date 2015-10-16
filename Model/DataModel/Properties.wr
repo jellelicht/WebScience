@@ -78,14 +78,6 @@
     <Attribute id="ent4#att11" name="budget" type="integer" db:column="budget"/>
     <Attribute id="ent4#att12" name="status" type="boolean" db:column="status"/>
   </Entity>
-  <Relationship id="rel5" name="Requester_Campaign" sourceEntity="ent2" targetEntity="ent4" db:database="db1" db:table="requester">
-    <RelationshipRole1 id="rel5#role9" name="RequesterToCampaign" maxCard="1">
-      <db:JoinColumn attribute="ent2#att5" name="oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel5#role10" name="CampaignToRequester" maxCard="N">
-      <db:JoinColumn attribute="ent4#att9" name="campaign_oid"/>
-    </RelationshipRole2>
-  </Relationship>
   <Entity gr:x="405" gr:y="485" id="ent5" name="Item" duration="persistent" attributeOrder="ent5#att13 ent5#att14 ent5#att15 ent5#att17" db:database="db1" db:table="item">
     <Attribute id="ent5#att13" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent5#att14" name="title" type="string" db:column="title"/>
@@ -98,7 +90,7 @@
     <Attribute id="ent6#att20" name="description" type="string" db:column="description"/>
     <Attribute id="ent6#att21" name="reward" type="integer" db:column="reward"/>
     <Attribute id="ent6#att22" name="maxTime" type="integer" db:column="maxtime"/>
-    <Attribute id="ent6#att23" name="expirationTimeStamp" type="integer" db:column="expirationtimestamp"/>
+    <Attribute id="ent6#att23" name="expirationTimeStamp" type="timestamp" db:column="expirationtimestamp"/>
   </Entity>
   <Relationship id="rel6" name="Skill_Task" sourceEntity="ent3" targetEntity="ent6" db:database="db1" db:table="skill_task">
     <RelationshipRole1 id="rel6#role11" name="SkillToTask" maxCard="N">
@@ -121,18 +113,6 @@
     <Attribute id="ent7#att25" name="value" type="string" db:column="value"/>
     <Attribute id="ent7#att26" name="evaluation" type="string" db:column="evaluation"/>
   </Entity>
-  <Relationship id="rel9" name="Worker_Answer" sourceEntity="ent1" targetEntity="ent7" db:database="db1" db:table="worker_answer">
-    <RelationshipRole1 id="rel9#role17" name="WorkerToAnswer" maxCard="N"/>
-    <RelationshipRole2 id="rel9#role18" name="AnswerToWorker" maxCard="N"/>
-  </Relationship>
-  <Relationship id="rel10" name="Answer_Item" sourceEntity="ent7" targetEntity="ent5" db:database="db1" db:table="answer_item">
-    <RelationshipRole1 id="rel10#role19" name="AnswerToItem" maxCard="N">
-      <db:JoinColumn attribute="ent7#att24" name="answer_oid"/>
-    </RelationshipRole1>
-    <RelationshipRole2 id="rel10#role20" name="ItemToAnswer" maxCard="N">
-      <db:JoinColumn attribute="ent5#att13" name="item_oid"/>
-    </RelationshipRole2>
-  </Relationship>
   <Entity gr:x="790" gr:y="570" id="ent8" name="CompletedTask" duration="persistent" attributeOrder="ent8#att27 ent8#att28 ent8#att29" db:database="db1" db:table="completedtask">
     <Attribute id="ent8#att27" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent8#att28" name="finished" type="boolean" db:column="finished"/>
@@ -154,7 +134,8 @@
       <db:JoinColumn attribute="ent8#att27" name="completedtask_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="LocalDB" type="MySQL" url="jdbc:mysql://localhost:3306/dbwebesi" username="root" cryptedPassword="true" password="cm9vdA=="/>
+  <db:Database id="db1" name="LocalDB" type="MySQL" url="jdbc:mysql://localhost:3306/dbwebesi" username="root" cryptedPassword="true" password="cm9vdA==">
+  </db:Database>
   <Relationship id="rel1" name="Worker_Task" sourceEntity="ent1" targetEntity="ent6" db:database="db1" db:table="worker_task">
     <RelationshipRole1 id="rel1#role1" name="WorkerToTask" maxCard="N">
       <db:JoinColumn attribute="ent1#att1" name="worker_oid"/>
@@ -177,6 +158,30 @@
     </RelationshipRole1>
     <RelationshipRole2 id="rel2#role4" name="TaskToCampaign" maxCard="N">
       <db:JoinColumn attribute="ent6#att18" name="task_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel13" name="Campaign_Requester" sourceEntity="ent4" targetEntity="ent2" db:database="db1" db:table="campaign">
+    <RelationshipRole1 id="rel13#role25" name="CampaignToRequester" maxCard="1">
+      <db:JoinColumn attribute="ent4#att9" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel13#role26" name="RequesterToCampaign" maxCard="N">
+      <db:JoinColumn attribute="ent2#att5" name="requester_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel14" name="Answer_Item" sourceEntity="ent7" targetEntity="ent5" db:database="db1" db:table="answer">
+    <RelationshipRole1 id="rel14#role27" name="AnswerToItem" maxCard="1">
+      <db:JoinColumn attribute="ent7#att24" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel14#role28" name="ItemToAnswer" maxCard="N">
+      <db:JoinColumn attribute="ent5#att13" name="item_oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel15" name="Worker_Answer" sourceEntity="ent1" targetEntity="ent7" db:database="db1" db:table="answer">
+    <RelationshipRole1 id="rel15#role29" name="WorkerToAnswer" maxCard="N">
+      <db:JoinColumn attribute="ent1#att1" name="worker_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel15#role30" name="AnswerToWorker" maxCard="1">
+      <db:JoinColumn attribute="ent7#att24" name="oid"/>
     </RelationshipRole2>
   </Relationship>
 </DataModel>

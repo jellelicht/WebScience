@@ -26,6 +26,7 @@
         <LinkParameter id="sv3#page12#dau5#ln3#par7" name="oid_Key Condition [oid]" source="data.ent5#att13" target="sv3#page1#enu1.ent7#att24"/>
         <LinkParameter id="sv3#page12#dau5#ln3#par13" name="oid_PASSING" sourceLinkParameter="sv3#page12#inu2#ln15#par10" passing="true"/>
       </Link>
+      <Link id="sv3#page12#dau5#ln17" name="Flow17" to="sv3#cru7" automaticCoupling="true" type="transport" validate="true"/>
     </DataUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
