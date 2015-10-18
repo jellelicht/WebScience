@@ -1,15 +1,15 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="370" gr:y="305" id="sv4#page11" name="Requester Home Page" protected="false">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="700" gr:y="280" id="sv4#page11" name="Requester Home Page" protected="false" landmark="true">
   <ContentUnits>
-    <PowerIndexUnit gr:x="0" gr:y="0" id="sv4#page11#pwu4" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att10 ent4#att11 ent4#att12" linkOrder="sv4#page11#pwu4#ln32 sv4#page11#pwu4#ln39">
+    <PowerIndexUnit gr:x="0" gr:y="0" id="sv4#page11#pwu4" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att10 ent4#att11 ent4#att12" linkOrder="sv4#page11#pwu4#ln32 sv4#page11#pwu4#ln51">
       <Link id="sv4#page11#pwu4#ln32" name="Delete" to="sv4#dlu3" automaticCoupling="true" type="normal" validate="true"/>
-      <Link id="sv4#page11#pwu4#ln39" name="Flow39" to="sv4#miu4" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv4#page11#pwu4#ln51" name="Details" to="sv4#page8#dau6" automaticCoupling="true" type="normal" validate="true"/>
     </PowerIndexUnit>
     <GetUnit gr:x="145" gr:y="5" id="sv4#page11#gtu4" name="GetCurrentUser" contextParameters="UserCtxParam">
       <Link id="sv4#page11#gtu4#ln10" name="Flow10" to="sv4#page11#enu9" type="transport" validate="true">
         <LinkParameter id="sv4#page11#gtu4#ln10#par17" name="UserCtxParam.oid_requester_oid" source="sv4#page11#gtu4.UserCtxParam" target="sv4#page11#enu9#fld29_slot"/>
       </Link>
       <Link id="sv4#page11#gtu4#ln19" name="Flow19" to="sv4#page11#dau1" type="transport" validate="true">
-        <LinkParameter id="sv4#page11#gtu4#ln19#par53" name="UserCtxParam.oid_KeyCondition7 [oid]" source="sv4#page11#gtu4.UserCtxParam" target="sv4#page11#dau1#su3#kcond7.ent2#att5"/>
+        <LinkParameter id="sv4#page11#gtu4#ln19#par110" name="UserCtxParam.oid_KeyCondition7 [oid]" source="sv4#page11#gtu4.UserCtxParam" target="sv4#page11#dau1#su3#kcond7.userOID"/>
       </Link>
     </GetUnit>
     <EntryUnit id="sv4#page11#enu9" name="Create Campaign" gr:x="20" gr:y="135" linkOrder="sv4#page11#enu9#ln11">
@@ -37,7 +37,7 @@
           <layout:Attribute attribute="ent4#att11"/>
           <layout:Attribute attribute="ent4#att12"/>
           <layout:Link link="sv4#page11#pwu4#ln32"/>
-          <layout:Link link="sv4#page11#pwu4#ln39"/>
+          <layout:Link link="sv4#page11#pwu4#ln51"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

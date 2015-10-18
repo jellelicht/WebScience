@@ -1,33 +1,32 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4" name="Requester Home" protected="true" homePage="sv4#page11" landmarks="sv4#page3 sv4#page4">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4" name="Requester Home" protected="true" homePage="sv4#page11" landmarks="sv4#lou2 sv4#page11">
   <OperationUnits>
-    <ModuleInstanceUnit gr:x="15" gr:y="475" id="sv4#miu2" action="true" name="CreateCampaign" moduleId="mov2#opm2">
+    <ModuleInstanceUnit gr:x="345" gr:y="450" id="sv4#miu2" action="true" name="CreateCampaign" moduleId="mov2#opm2">
       <OKLink id="sv4#miu2#oln12" name="OKFlow12" to="sv4#page11" automaticCoupling="true"/>
     </ModuleInstanceUnit>
-    <LogoutUnit gr:x="740" gr:y="160" id="sv4#lou2" name="Logout" siteView="sv2"/>
-    <CreateUnit gr:x="1195" gr:y="455" id="sv4#cru3" name="AddItem" entity="ent5">
-      <OKLink id="sv4#cru3#oln2" name="OKFlow2" to="sv4#page3" automaticCoupling="true" gr:bendpoints="41,-234,196,-9"/>
-    </CreateUnit>
-    <DeleteUnit gr:x="870" gr:y="485" id="sv4#dlu1" name="Deleteitem" entity="ent5">
-      <Selector id="sv4#dlu1#su10" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv4#dlu1#su10#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
-      </Selector>
-      <OKLink id="sv4#dlu1#oln3" name="OKFlow3" to="sv4#page3" automaticCoupling="true" gr:bendpoints="174,-36,14,224"/>
-    </DeleteUnit>
-    <CreateUnit gr:x="735" gr:y="800" id="sv4#cru5" name="Create5" entity="ent6">
-      <OKLink id="sv4#cru5#oln4" name="OKFlow4" to="sv4#page4" automaticCoupling="true"/>
-    </CreateUnit>
-    <DeleteUnit gr:x="290" gr:y="760" id="sv4#dlu2" name="Delete Task" entity="ent6">
-      <Selector id="sv4#dlu2#su12" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv4#dlu2#su12#kcond10" name="KeyCondition10" predicate="in" implied="false"/>
-      </Selector>
-      <OKLink id="sv4#dlu2#oln5" name="OKFlow5" to="sv4#page4" automaticCoupling="true"/>
-    </DeleteUnit>
-    <DeleteUnit gr:x="155" gr:y="330" id="sv4#dlu3" name="Delete3" entity="ent4">
+    <LogoutUnit gr:x="1070" gr:y="135" id="sv4#lou2" name="Logout" siteView="sv2" landmark="true"/>
+    <DeleteUnit gr:x="485" gr:y="305" id="sv4#dlu3" name="DeleteCampaign" entity="ent4">
       <Selector id="sv4#dlu3#su13" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#dlu3#su13#kcond11" name="KeyCondition11" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv4#dlu3#oln6" name="OKFlow6" to="sv4#page11" automaticCoupling="true"/>
     </DeleteUnit>
-    <ModuleInstanceUnit gr:x="265" gr:y="190" id="sv4#miu4" action="true" moduleId="mov2#opm5"/>
+    <CreateUnit gr:x="855" gr:y="185" id="sv4#cru10" name="CreateTask" entity="ent6">
+      <OKLink id="sv4#cru10#oln27" name="OKFlow27" to="sv4#page8" automaticCoupling="true"/>
+    </CreateUnit>
+    <CreateUnit gr:x="135" gr:y="360" id="sv4#cru11" name="CreateItem" entity="ent5">
+      <OKLink id="sv4#cru11#oln28" name="OKFlow28" to="sv4#page14" automaticCoupling="true"/>
+    </CreateUnit>
+    <DeleteUnit gr:x="15" gr:y="140" id="sv4#dlu5" name="DeleteItem" entity="ent5">
+      <Selector id="sv4#dlu5#su20" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#dlu5#su20#kcond13" name="KeyCondition13" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#dlu5#oln30" name="OKFlow30" to="sv4#page14" automaticCoupling="true"/>
+    </DeleteUnit>
+    <DeleteUnit gr:x="790" gr:y="75" id="sv4#dlu6" name="DeleteTask" entity="ent6">
+      <Selector id="sv4#dlu6#su21" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#dlu6#su21#kcond14" name="KeyCondition14" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv4#dlu6#oln29" name="OKFlow29" to="sv4#page8" automaticCoupling="true"/>
+    </DeleteUnit>
   </OperationUnits>
 </SiteView>
