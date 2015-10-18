@@ -15,12 +15,17 @@
     <IndexUnit gr:x="5" gr:y="365" id="sv3#page9#inu1" name="TasksList" entity="ent6" displayAttributes="ent6#att19 ent6#att20 ent6#att21" linkOrder="sv3#page9#inu1#ln13">
       <Selector id="sv3#page9#inu1#su6" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page9#inu1#su6#rcond2" name="RoleCondition2" predicate="in" implied="false" role="rel1#role1"/>
-        <AttributesCondition id="sv3#page9#inu1#su6#acond1" name="AttCondition1" predicate="lt" booleanOperator="or" implied="false" attributes="ent6#att23" value="cu"/>
+        <AttributesCondition id="sv3#page9#inu1#su6#acond1" name="time" predicate="lt" booleanOperator="or" implied="false" attributes="ent6#att23"/>
       </Selector>
       <Link id="sv3#page9#inu1#ln13" name="Select" to="sv3#page12#dau4" type="normal" validate="true">
         <LinkParameter id="sv3#page9#inu1#ln13#par31" name="oid_KeyCondition5 [oid]" source="data[].ent6#att18" target="sv3#page12#dau4#su7#kcond5.ent6#att18"/>
       </Link>
     </IndexUnit>
+    <TimeUnit gr:x="165" gr:y="270" id="sv3#page9#tmu1" name="Time1">
+      <Link id="sv3#page9#tmu1#ln28" name="Flow28" to="sv3#page9#inu1" type="transport" validate="true">
+        <LinkParameter id="sv3#page9#tmu1#ln28#par26" name="Current/Input Timestamp_current oid" source="currentTimestamp" target="sv3#page9#inu1.current.ent6#att18"/>
+      </Link>
+    </TimeUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
