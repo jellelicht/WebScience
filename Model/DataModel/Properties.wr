@@ -82,7 +82,7 @@
     <Attribute id="ent5#att13" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent5#att14" name="title" type="string" db:column="title"/>
     <Attribute id="ent5#att15" name="caption" type="string" db:column="caption"/>
-    <Attribute id="ent5#att17" name="url" type="string" db:column="url"/>
+    <Attribute id="ent5#att17" name="url" type="blob" db:column="url" contentType="image"/>
   </Entity>
   <Entity gr:x="835" gr:y="115" id="ent6" name="Task" duration="persistent" attributeOrder="ent6#att18 ent6#att19 ent6#att20 ent6#att21 ent6#att22 ent6#att23" db:database="db1" db:table="task">
     <Attribute id="ent6#att18" key="true" name="oid" type="integer" db:column="oid"/>
@@ -118,7 +118,8 @@
     <Attribute id="ent8#att28" name="finished" type="boolean" db:column="finished"/>
     <Attribute id="ent8#att29" name="startTime" type="integer" db:column="starttime"/>
   </Entity>
-  <db:Database id="db1" name="LocalDB" type="MySQL" url="jdbc:mysql://localhost:3306/test4" username="root" cryptedPassword="true" password="YWFyZGJlaQ=="/>
+  <db:Database id="db1" name="LocalDB" type="MySQL" url="jdbc:mysql://localhost:3306/test4" username="root" cryptedPassword="true" password="YWFyZGJlaQ==">
+  </db:Database>
   <Relationship id="rel1" name="Worker_Task" sourceEntity="ent1" targetEntity="ent6" db:database="db1" db:table="worker_task">
     <RelationshipRole1 id="rel1#role1" name="WorkerToTask" maxCard="N">
       <db:JoinColumn attribute="userOID" name="worker_oid"/>

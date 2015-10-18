@@ -13,10 +13,10 @@
     <CreateUnit gr:x="810" gr:y="435" id="sv4#cru10" name="CreateTask" entity="ent6">
       <OKLink id="sv4#cru10#oln27" name="OKFlow27" to="sv4#page8" automaticCoupling="true"/>
     </CreateUnit>
-    <CreateUnit gr:x="60" gr:y="400" id="sv4#cru11" name="CreateItem" entity="ent5">
+    <CreateUnit gr:x="65" gr:y="510" id="sv4#cru11" name="CreateItem" entity="ent5">
       <OKLink id="sv4#cru11#oln28" name="OKFlow28" to="sv4#page14" automaticCoupling="true"/>
     </CreateUnit>
-    <DeleteUnit gr:x="235" gr:y="395" id="sv4#dlu5" name="DeleteItem" entity="ent5">
+    <DeleteUnit gr:x="270" gr:y="495" id="sv4#dlu5" name="DeleteItem" entity="ent5">
       <Selector id="sv4#dlu5#su20" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#dlu5#su20#kcond13" name="KeyCondition13" predicate="in" implied="false"/>
       </Selector>
@@ -45,7 +45,7 @@
         <KeyCondition id="sv4#dcnu2#su24#kcond18" name="KeyCondition18" predicate="in" implied="false"/>
       </TargetSelector>
     </DisconnectUnit>
-    <ConnectUnit gr:x="350" gr:y="405" id="sv4#cnu3" name="Connect3" relationship="rel1#role2">
+    <ConnectUnit gr:x="375" gr:y="485" id="sv4#cnu3" name="Connect3" relationship="rel1#role2">
       <SourceSelector id="sv4#cnu3#su29" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#cnu3#su29#kcond20" name="KeyCondition20" predicate="in" implied="false"/>
       </SourceSelector>
