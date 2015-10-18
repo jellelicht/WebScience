@@ -1,10 +1,10 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Worker Home" protected="true" homePage="sv3#page9" landmarks="sv3#page9">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Worker Home" protected="true" homePage="sv3#page9" landmarks="sv3#page9 sv3#lou1">
   <OperationUnits>
     <CreateUnit gr:x="580" gr:y="205" id="sv3#cru7" name="Add Answer" entity="ent7">
       <OKLink id="sv3#cru7#oln1" name="OKFlow1" to="sv3#page12#dau4">
         <LinkParameter id="sv3#cru7#oln1#par15" name="oid_PASSING_KeyCondition5 [oid]" sourceLinkParameter="sv3#page1#enu1#ln1#par14" target="sv3#page12#dau4#su7#kcond5.ent6#att18"/>
       </OKLink>
     </CreateUnit>
-    <LogoutUnit gr:x="335" gr:y="615" id="sv3#lou1" name="LogoutWorker" siteView="sv2"/>
+    <LogoutUnit gr:x="335" gr:y="615" id="sv3#lou1" name="LogoutWorker" siteView="sv2" landmark="true"/>
   </OperationUnits>
 </SiteView>

@@ -1,0 +1,26 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="620" gr:y="290" id="mov2#opm5" name="AddTaskToCampaign">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm5#icu5" gr:x="30" gr:y="60">
+      <Link id="mov2#opm5#icu5#ln37" name="Flow37" to="mov2#opm5#cru8" automaticCoupling="false" type="transport" validate="true">
+        <LinkParameter id="mov2#opm5#icu5#ln37#par34" name="Campaign.oid(TaskToCampaign)" source="mov2#opm5#icu5#icp18" target="mov2#opm5#cru8.rel2#role4.ent4#att9"/>
+        <LinkParameter id="mov2#opm5#icu5#ln37#par35" name="description" source="mov2#opm5#icu5#icp19" target="mov2#opm5#cru8.ent6#att20"/>
+        <LinkParameter id="mov2#opm5#icu5#ln37#par36" name="expirationTimeStamp" source="mov2#opm5#icu5#icp20" target="mov2#opm5#cru8.ent6#att23"/>
+        <LinkParameter id="mov2#opm5#icu5#ln37#par40" name="maxTime" source="mov2#opm5#icu5#icp21" target="mov2#opm5#cru8.ent6#att22"/>
+        <LinkParameter id="mov2#opm5#icu5#ln37#par41" name="reward" source="mov2#opm5#icu5#icp22" target="mov2#opm5#cru8.ent6#att21"/>
+        <LinkParameter id="mov2#opm5#icu5#ln37#par42" name="title" source="mov2#opm5#icu5#icp23" target="mov2#opm5#cru8.ent6#att19"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp18" name="Campaign.oid(TaskToCampaign)"/>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp19" name="description"/>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp20" name="expirationTimeStamp"/>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp21" name="maxTime"/>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp22" name="reward"/>
+      <InputCollectorParameter id="mov2#opm5#icu5#icp23" name="title"/>
+    </InputCollectorUnit>
+    <KOCollectorUnit id="mov2#opm5#kocu4" name="KO Port4" gr:x="550" gr:y="120"/>
+    <CreateUnit id="mov2#opm5#cru8" name="Create1" gr:x="435" gr:y="95" entity="ent6" skipBlankRecords="false">
+      <OKLink id="mov2#opm5#cru8#oln24" name="OKFlow3" to="mov2#opm5#okcu6" automaticCoupling="true"/>
+      <KOLink id="mov2#opm5#cru8#kln5" name="KOFlow1" to="mov2#opm5#kocu4" automaticCoupling="true"/>
+    </CreateUnit>
+    <OKCollectorUnit id="mov2#opm5#okcu6" name="OK Port6" gr:x="550" gr:y="20"/>
+  </OperationUnits>
+</OperationModule>

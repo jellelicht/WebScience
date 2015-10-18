@@ -134,7 +134,8 @@
       <db:JoinColumn attribute="ent8#att27" name="completedtask_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <db:Database id="db1" name="LocalDB" type="MySQL" url="jdbc:mysql://localhost:3306/test" username="root" cryptedPassword="true" password="YWFyZGJlaQ=="/>
+  <db:Database id="db1" name="LocalDB" type="MySQL" url="jdbc:mysql://localhost:3306/test2" username="root" cryptedPassword="true" password="YWFyZGJlaQ==">
+  </db:Database>
   <Relationship id="rel1" name="Worker_Task" sourceEntity="ent1" targetEntity="ent6" db:database="db1" db:table="worker_task">
     <RelationshipRole1 id="rel1#role1" name="WorkerToTask" maxCard="N">
       <db:JoinColumn attribute="userOID" name="worker_oid"/>

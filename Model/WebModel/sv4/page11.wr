@@ -1,7 +1,8 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="370" gr:y="305" id="sv4#page11" name="Requester Home Page" protected="false">
   <ContentUnits>
-    <PowerIndexUnit gr:x="0" gr:y="0" id="sv4#page11#pwu4" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att10 ent4#att11 ent4#att12" linkOrder="sv4#page11#pwu4#ln32">
+    <PowerIndexUnit gr:x="0" gr:y="0" id="sv4#page11#pwu4" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att10 ent4#att11 ent4#att12" linkOrder="sv4#page11#pwu4#ln32 sv4#page11#pwu4#ln39">
       <Link id="sv4#page11#pwu4#ln32" name="Delete" to="sv4#dlu3" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv4#page11#pwu4#ln39" name="Flow39" to="sv4#miu4" automaticCoupling="true" type="normal" validate="true"/>
     </PowerIndexUnit>
     <GetUnit gr:x="145" gr:y="5" id="sv4#page11#gtu4" name="GetCurrentUser" contextParameters="UserCtxParam">
       <Link id="sv4#page11#gtu4#ln10" name="Flow10" to="sv4#page11#enu9" type="transport" validate="true">
@@ -36,6 +37,7 @@
           <layout:Attribute attribute="ent4#att11"/>
           <layout:Attribute attribute="ent4#att12"/>
           <layout:Link link="sv4#page11#pwu4#ln32"/>
+          <layout:Link link="sv4#page11#pwu4#ln39"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

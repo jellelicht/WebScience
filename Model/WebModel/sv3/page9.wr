@@ -8,24 +8,24 @@
         <KeyCondition id="sv3#page9#dau3#su5#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
       </Selector>
       <Link id="sv3#page9#dau3#ln21" name="Flow21" to="sv3#page9#inu1" type="transport" validate="true">
-        <LinkParameter id="sv3#page9#dau3#ln21#par46" name="oid_RoleCondition2 [oid]" source="data.userOID" target="sv3#page9#inu1#su6#rcond2.ent1#att1"/>
+        <LinkParameter id="sv3#page9#dau3#ln21#par32" name="oid_RoleCondition2 [oid]" source="data.userOID" target="sv3#page9#inu1#su6#rcond2.userOID"/>
       </Link>
       <Link id="sv3#page9#dau3#ln5" name="Logout" to="sv3#lou1" automaticCoupling="true" type="normal" validate="true"/>
     </DataUnit>
-    <IndexUnit gr:x="5" gr:y="365" id="sv3#page9#inu1" name="TasksList" entity="ent6" displayAttributes="ent6#att19 ent6#att20 ent6#att21" linkOrder="sv3#page9#inu1#ln13">
+    <IndexUnit gr:x="5" gr:y="365" id="sv3#page9#inu1" name="TasksList" entity="ent6" displayAttributes="ent6#att19 ent6#att20 ent6#att21 ent6#att23" linkOrder="sv3#page9#inu1#ln13">
       <Selector id="sv3#page9#inu1#su6" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page9#inu1#su6#rcond2" name="RoleCondition2" predicate="in" implied="false" role="rel1#role1"/>
-        <AttributesCondition id="sv3#page9#inu1#su6#acond1" name="time" predicate="lt" booleanOperator="or" implied="false" attributes="ent6#att23"/>
       </Selector>
       <Link id="sv3#page9#inu1#ln13" name="Select" to="sv3#page12#dau4" type="normal" validate="true">
         <LinkParameter id="sv3#page9#inu1#ln13#par31" name="oid_KeyCondition5 [oid]" source="data[].ent6#att18" target="sv3#page12#dau4#su7#kcond5.ent6#att18"/>
       </Link>
     </IndexUnit>
     <TimeUnit gr:x="165" gr:y="270" id="sv3#page9#tmu1" name="Time1">
-      <Link id="sv3#page9#tmu1#ln28" name="Flow28" to="sv3#page9#inu1" type="transport" validate="true">
-        <LinkParameter id="sv3#page9#tmu1#ln28#par26" name="Current/Input Timestamp_current oid" source="currentTimestamp" target="sv3#page9#inu1.current.ent6#att18"/>
+      <Link id="sv3#page9#tmu1#ln31" name="Flow31" to="sv3#page9#mssu3" type="transport" validate="true">
+        <LinkParameter id="sv3#page9#tmu1#ln31#par33" name="Current/Input Timestamp_Shown Messages" source="timeInMillis" target="sv3#page9#mssu3.shownMessages"/>
       </Link>
     </TimeUnit>
+    <MultiMessageUnit gr:x="210" gr:y="400" id="sv3#page9#mssu3" name="Message3"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -51,10 +51,11 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv3#page9#inu1">
+          <layout:Link link="sv3#page9#inu1#ln13"/>
           <layout:Attribute attribute="ent6#att19"/>
           <layout:Attribute attribute="ent6#att20"/>
           <layout:Attribute attribute="ent6#att21"/>
-          <layout:Link link="sv3#page9#inu1#ln13"/>
+          <layout:Attribute attribute="ent6#att23"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -70,7 +71,9 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12"/>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page9#mssu3"/>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
