@@ -1,0 +1,131 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="160" gr:y="460" id="mov2#opm12" name="TransferReward">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm12#icu12" gr:x="-20" gr:y="60">
+      <InputCollectorParameter id="mov2#opm12#icu12#icp27" name="Task"/>
+      <InputCollectorParameter id="mov2#opm12#icu12#icp28" name="Worker"/>
+      <OKLink id="mov2#opm12#icu12#oln61" name="OKFlow61" to="mov2#opm12#seu17">
+        <LinkParameter id="mov2#opm12#icu12#oln61#par179" name="Task_KeyCondition30 [oid]" source="mov2#opm12#icu12#icp27" target="mov2#opm12#seu17#su46#kcond30.ent6#att18"/>
+      </OKLink>
+      <Link id="mov2#opm12#icu12#ln83" name="Flow82" to="mov2#opm12#seu18" type="transport" validate="true">
+        <LinkParameter id="mov2#opm12#icu12#ln83#par192" name="Worker_KeyCondition33 [oid]" source="mov2#opm12#icu12#icp28" target="mov2#opm12#seu18#su50#kcond33.userOID"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="275" gr:y="20" id="mov2#opm12#seu17" name="Task" entity="ent6">
+      <Selector id="mov2#opm12#seu17#su46" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm12#seu17#su46#kcond30" name="KeyCondition30" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm12#seu17#oln62" name="OKFlow62" to="mov2#opm12#seu19">
+        <LinkParameter id="mov2#opm12#seu17#oln62#par180" name="oid_RoleCondition21 [oid]" source="ent6#att18Array" target="mov2#opm12#seu19#su47#rcond21.ent6#att18"/>
+        <LinkParameter id="mov2#opm12#seu17#oln62#par181" name="reward_PASSING" source="ent6#att21Array" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#opm12#seu17#kln18" name="KOFlow18" to="mov2#opm12#kocu10">
+        <LinkParameter id="mov2#opm12#seu17#kln18#par222" name="no tas_msg" sourceValue="no tas" target="mov2#opm12#kocu10#ocp5"/>
+      </KOLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="185" gr:y="380" id="mov2#opm12#seu18" name="Worker" entity="ent1" linkOrder="mov2#opm12#seu18#ln85">
+      <Selector id="mov2#opm12#seu18#su50" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm12#seu18#su50#kcond33" name="KeyCondition33" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm12#seu18#oln68" name="OKFlow68" to="mov2#opm12#mathu6">
+        <LinkParameter id="mov2#opm12#seu18#oln68#par204" name="reward_PASSING_revenue" sourceLinkParameter="mov2#opm12#mfu5#oln67#par203" target="mov2#opm12#mathu6#mathv10"/>
+        <LinkParameter id="mov2#opm12#seu18#oln68#par205" name="wallet_wallet" source="User#att16Array" target="mov2#opm12#mathu6#mathv9"/>
+        <LinkParameter id="mov2#opm12#seu18#oln68#par230" name="wallet_PASSING" source="User#att16Array" passing="true"/>
+      </OKLink>
+      <Link id="mov2#opm12#seu18#ln85" name="Flow85" to="mov2#opm12#mfu4" type="transport" validate="true">
+        <LinkParameter id="mov2#opm12#seu18#ln85#par206" name="accuracy_accuracy" source="ent1#att32Array" target="mov2#opm12#mfu4.ent1#att32"/>
+        <LinkParameter id="mov2#opm12#seu18#ln85#par207" name="birthdate_birthdate" source="User#att31Array" target="mov2#opm12#mfu4.User#att31"/>
+        <LinkParameter id="mov2#opm12#seu18#ln85#par208" name="email_email" source="emailArray" target="mov2#opm12#mfu4.email"/>
+        <LinkParameter id="mov2#opm12#seu18#ln85#par209" name="oid_KeyCondition32 [oid]" source="userOIDArray" target="mov2#opm12#mfu4#su49#kcond32.userOID"/>
+        <LinkParameter id="mov2#opm12#seu18#ln85#par210" name="name_name" source="User#att30Array" target="mov2#opm12#mfu4.User#att30"/>
+        <LinkParameter id="mov2#opm12#seu18#ln85#par211" name="password_password" source="passwordArray" target="mov2#opm12#mfu4.password"/>
+        <LinkParameter id="mov2#opm12#seu18#ln85#par212" name="userName_userName" source="userNameArray" target="mov2#opm12#mfu4.userName"/>
+      </Link>
+      <KOLink id="mov2#opm12#seu18#kln21" name="KOFlow21" to="mov2#opm12#kocu10">
+        <LinkParameter id="mov2#opm12#seu18#kln21#par225" name="no worker_msg" sourceValue="no worker" target="mov2#opm12#kocu10#ocp5"/>
+      </KOLink>
+    </SelectorUnit>
+    <SelectorUnit gr:x="415" gr:y="10" id="mov2#opm12#seu19" name="Campaign" entity="ent4" linkOrder="mov2#opm12#seu19#ln84">
+      <Selector id="mov2#opm12#seu19#su47" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm12#seu19#su47#rcond21" name="RoleCondition21" predicate="in" implied="false" role="rel3#role6"/>
+      </Selector>
+      <OKLink id="mov2#opm12#seu19#oln63" name="OKFlow63" to="mov2#opm12#mathu5">
+        <LinkParameter id="mov2#opm12#seu19#oln63#par187" name="reward_PASSING_cost" sourceLinkParameter="mov2#opm12#seu17#oln62#par181" target="mov2#opm12#mathu5#mathv8"/>
+        <LinkParameter id="mov2#opm12#seu19#oln63#par188" name="budget_funds" source="ent4#att11Array" target="mov2#opm12#mathu5#mathv7"/>
+        <LinkParameter id="mov2#opm12#seu19#oln63#par189" name="reward_PASSING" sourceLinkParameter="mov2#opm12#seu17#oln62#par181" passing="true"/>
+      </OKLink>
+      <Link id="mov2#opm12#seu19#ln84" name="Flow84" to="mov2#opm12#mfu5" type="transport" validate="true">
+        <LinkParameter id="mov2#opm12#seu19#ln84#par197" name="oid_KeyCondition34 [oid]" source="ent4#att9Array" target="mov2#opm12#mfu5#su51#kcond34.ent4#att9"/>
+        <LinkParameter id="mov2#opm12#seu19#ln84#par198" name="name_name" source="ent4#att10Array" target="mov2#opm12#mfu5.ent4#att10"/>
+        <LinkParameter id="mov2#opm12#seu19#ln84#par199" name="status_status" source="ent4#att12Array" target="mov2#opm12#mfu5.ent4#att12"/>
+      </Link>
+      <KOLink id="mov2#opm12#seu19#kln19" name="KOFlow19" to="mov2#opm12#kocu10">
+        <LinkParameter id="mov2#opm12#seu19#kln19#par223" name="no campaign_msg" sourceValue="no campaign" target="mov2#opm12#kocu10#ocp5"/>
+      </KOLink>
+    </SelectorUnit>
+    <MathUnit gr:x="330" gr:y="365" id="mov2#opm12#mathu3" name="EnoughFunds" resultType="boolean" defaultExpression="funds &gt;= 0">
+      <MathVariable id="mov2#opm12#mathu3#mathv5" name="funds"/>
+      <OKLink id="mov2#opm12#mathu3#oln64" name="OKFlow64" to="mov2#opm12#switch10">
+        <LinkParameter id="mov2#opm12#mathu3#oln64#par193" name="Result_Switch" source="result" target="mov2#opm12#switch10.switch"/>
+        <LinkParameter id="mov2#opm12#mathu3#oln64#par194" name="Result_PASSING" sourceLinkParameter="mov2#opm12#mathu5#oln65#par186" passing="true"/>
+        <LinkParameter id="mov2#opm12#mathu3#oln64#par195" name="reward_PASSING" sourceLinkParameter="mov2#opm12#mathu5#oln65#par190" passing="true"/>
+      </OKLink>
+    </MathUnit>
+    <SwitchUnit gr:x="300" gr:y="150" id="mov2#opm12#switch10" name="EnoughFunds2">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov2#opm12#switch10#oln66" name="OKFlow66" to="mov2#opm12#mfu5" code="true">
+        <LinkParameter id="mov2#opm12#switch10#oln66#par200" name="Result_PASSING_budget" sourceLinkParameter="mov2#opm12#mathu3#oln64#par194" target="mov2#opm12#mfu5.ent4#att11"/>
+        <LinkParameter id="mov2#opm12#switch10#oln66#par202" name="reward_PASSING" sourceLinkParameter="mov2#opm12#mathu3#oln64#par195" passing="true"/>
+      </OKLink>
+      <OKLink id="mov2#opm12#switch10#oln70" name="OKFlow70" to="mov2#opm12#kocu10" code="false">
+        <LinkParameter id="mov2#opm12#switch10#oln70#par229" name="not enough funds_msg" target="mov2#opm12#kocu10#ocp5" sourceLinkParameter="mov2#opm12#mathu3#oln64#par194"/>
+      </OKLink>
+    </SwitchUnit>
+    <MathUnit gr:x="440" gr:y="240" id="mov2#opm12#mathu5" name="NewFunds" resultType="float" defaultExpression="funds - cost">
+      <OKLink id="mov2#opm12#mathu5#oln65" name="OKFlow65" to="mov2#opm12#mathu3">
+        <LinkParameter id="mov2#opm12#mathu5#oln65#par185" name="Result_funds" source="result" target="mov2#opm12#mathu3#mathv5"/>
+        <LinkParameter id="mov2#opm12#mathu5#oln65#par186" name="Result_PASSING" source="result" passing="true"/>
+        <LinkParameter id="mov2#opm12#mathu5#oln65#par190" name="reward_PASSING" sourceLinkParameter="mov2#opm12#seu19#oln63#par189" passing="true"/>
+      </OKLink>
+      <MathVariable id="mov2#opm12#mathu5#mathv7" name="funds"/>
+      <MathVariable id="mov2#opm12#mathu5#mathv8" name="cost"/>
+      <KOLink id="mov2#opm12#mathu5#kln24" name="KOFlow24" to="mov2#opm12#kocu10">
+        <LinkParameter id="mov2#opm12#mathu5#kln24#par228" name="no calc new funds_msg" sourceValue="no calc new funds" target="mov2#opm12#kocu10#ocp5"/>
+      </KOLink>
+    </MathUnit>
+    <ModifyUnit gr:x="375" gr:y="470" id="mov2#opm12#mfu4" name="Update4" entity="ent1">
+      <Selector id="mov2#opm12#mfu4#su49" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm12#mfu4#su49#kcond32" name="KeyCondition32" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov2#opm12#mfu4#kln22" name="KOFlow22" to="mov2#opm12#kocu10">
+        <LinkParameter id="mov2#opm12#mfu4#kln22#par226" name="no setwallet_msg" sourceValue="no setwallet" target="mov2#opm12#kocu10#ocp5"/>
+      </KOLink>
+      <OKLink id="mov2#opm12#mfu4#oln71" name="OKFlow71" to="mov2#opm12#okcu15" automaticCoupling="true"/>
+    </ModifyUnit>
+    <MathUnit gr:x="200" gr:y="510" id="mov2#opm12#mathu6" name="newWallet" resultType="float" defaultExpression="wallet + revenue">
+      <MathVariable id="mov2#opm12#mathu6#mathv9" name="wallet"/>
+      <MathVariable id="mov2#opm12#mathu6#mathv10" name="revenue"/>
+      <OKLink id="mov2#opm12#mathu6#oln69" name="OKFlow69" to="mov2#opm12#mfu4">
+        <LinkParameter id="mov2#opm12#mathu6#oln69#par213" name="Result_wallet" source="result" target="mov2#opm12#mfu4.User#att16"/>
+      </OKLink>
+      <KOLink id="mov2#opm12#mathu6#kln25" name="KOFlow25" to="mov2#opm12#kocu10">
+        <LinkParameter id="mov2#opm12#mathu6#kln25#par227" name="no calc new walet_msg" target="mov2#opm12#kocu10#ocp5" sourceLinkParameter="mov2#opm12#seu18#oln68#par230"/>
+      </KOLink>
+    </MathUnit>
+    <ModifyUnit gr:x="170" gr:y="170" id="mov2#opm12#mfu5" name="SetFunds" entity="ent4">
+      <Selector id="mov2#opm12#mfu5#su51" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm12#mfu5#su51#kcond34" name="KeyCondition34" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm12#mfu5#oln67" name="OKFlow67" to="mov2#opm12#seu18">
+        <LinkParameter id="mov2#opm12#mfu5#oln67#par203" name="reward_PASSING" sourceLinkParameter="mov2#opm12#switch10#oln66#par202" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#opm12#mfu5#kln20" name="KOFlow20" to="mov2#opm12#kocu10">
+        <LinkParameter id="mov2#opm12#mfu5#kln20#par224" name="no setfunds_msg" sourceValue="no setfunds" target="mov2#opm12#kocu10#ocp5"/>
+      </KOLink>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="1045" gr:y="450" id="mov2#opm12#okcu15" name="Awesome"/>
+    <KOCollectorUnit gr:x="1045" gr:y="200" id="mov2#opm12#kocu10" name="Uncool">
+      <OutputCollectorParameter id="mov2#opm12#kocu10#ocp5" name="msg"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

@@ -40,6 +40,8 @@
         <LinkParameter id="sv4#page5#enu6#ln77#par155" name="task_Task_id" source="sv4#page5#enu6#fld11" target="sv4#miu7.mov2#opm10#icu10#icp23"/>
         <LinkParameter id="sv4#page5#enu6#ln77#par156" name="worker_Worker_id" source="sv4#page5#enu6#fld13" target="sv4#miu7.mov2#opm10#icu10#icp24"/>
         <LinkParameter id="sv4#page5#enu6#ln77#par171" name="answers_PASSING" sourceLinkParameter="sv4#page5#miu6#ln78#par154" passing="true"/>
+        <LinkParameter id="sv4#page5#enu6#ln77#par214" name="task_PASSING" source="sv4#page5#enu6#fld11" passing="true"/>
+        <LinkParameter id="sv4#page5#enu6#ln77#par215" name="worker_PASSING" source="sv4#page5#enu6#fld13" passing="true"/>
       </Link>
     </EntryUnit>
     <DataUnit gr:x="80" gr:y="150" id="sv4#page5#dau11" name="Task overview" entity="ent6" displayAttributes="ent6#att19 ent6#att20 ent6#att21">

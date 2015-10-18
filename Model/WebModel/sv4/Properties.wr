@@ -63,21 +63,32 @@
     <CreateUnit gr:x="955" gr:y="820" id="sv4#cru12" name="Create Campaign" entity="ent4">
       <OKLink id="sv4#cru12#oln35" name="OKFlow35" to="sv4#page11" automaticCoupling="true"/>
     </CreateUnit>
-    <ModuleInstanceUnit gr:x="660" gr:y="315" id="sv4#miu7" action="true" moduleId="mov2#opm10">
+    <ModuleInstanceUnit gr:x="700" gr:y="335" id="sv4#miu7" action="true" moduleId="mov2#opm10">
       <KOLink id="sv4#miu7#kln13" name="KOFlow13" to="sv4#page5#mssu5">
         <LinkParameter id="sv4#miu7#kln13#par158" name="answers_PASSING_Shown Messages" target="sv4#page5#mssu5.shownMessages" source="mov2#opm10#kocu8#ocp3"/>
       </KOLink>
       <OKLink id="sv4#miu7#oln53" name="OKFlow53" to="sv4#miu8" gr:bendpoints="45,-62,-15,68">
         <LinkParameter id="sv4#miu7#oln53#par176" name="answers_PASSING_Answers" sourceLinkParameter="sv4#page5#enu6#ln77#par171" target="sv4#miu8.mov2#opm11#icu11#icp25"/>
         <LinkParameter id="sv4#miu7#oln53#par177" name="evaluation_PASSING_Evaluation" sourceLinkParameter="sv4#page5#enu6#ln77#par151" target="sv4#miu8.mov2#opm11#icu11#icp26"/>
+        <LinkParameter id="sv4#miu7#oln53#par216" name="task_PASSING" sourceLinkParameter="sv4#page5#enu6#ln77#par214" passing="true"/>
+        <LinkParameter id="sv4#miu7#oln53#par217" name="worker_PASSING" sourceLinkParameter="sv4#page5#enu6#ln77#par215" passing="true"/>
       </OKLink>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit gr:x="1000" gr:y="285" id="sv4#miu8" action="true" moduleId="mov2#opm11">
-      <OKLink id="sv4#miu8#oln54" name="OKFlow54" to="sv4#page5#mssu5" gr:bendpoints="-201,-55,139,65">
-        <LinkParameter id="sv4#miu8#oln54#par140" name="Good eval_Shown Messages" sourceValue="Good eval" target="sv4#page5#mssu5.shownMessages"/>
+    <ModuleInstanceUnit gr:x="985" gr:y="315" id="sv4#miu8" action="true" moduleId="mov2#opm11">
+      <OKLink id="sv4#miu8#oln54" name="OKFlow54" to="sv4#miu9" gr:bendpoints="-201,-55,139,65">
+        <LinkParameter id="sv4#miu8#oln54#par218" name="task_PASSING_Task" sourceLinkParameter="sv4#miu7#oln53#par216" target="sv4#miu9.mov2#opm12#icu12#icp27"/>
+        <LinkParameter id="sv4#miu8#oln54#par219" name="worker_PASSING_Worker" sourceLinkParameter="sv4#miu7#oln53#par217" target="sv4#miu9.mov2#opm12#icu12#icp28"/>
       </OKLink>
       <KOLink id="sv4#miu8#kln16" name="KOFlow16" to="sv4#page5#mssu5">
         <LinkParameter id="sv4#miu8#kln16#par139" name="Eval of answers failed_Shown Messages" sourceValue="Eval of answers failed" target="sv4#page5#mssu5.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="1060" gr:y="180" id="sv4#miu9" action="true" moduleId="mov2#opm12">
+      <OKLink id="sv4#miu9#oln72" name="OKFlow72" to="sv4#page5#mssu5">
+        <LinkParameter id="sv4#miu9#oln72#par220" name="Transferred the $$$_Shown Messages" sourceValue="transferred" target="sv4#page5#mssu5.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv4#miu9#kln23" name="KOFlow23" to="sv4#page5#mssu5" gr:bendpoints="-170,23,130,8">
+        <LinkParameter id="sv4#miu9#kln23#par221" name="Oh my goodness_Shown Messages" target="sv4#page5#mssu5.shownMessages" source="mov2#opm12#kocu10#ocp5"/>
       </KOLink>
     </ModuleInstanceUnit>
   </OperationUnits>

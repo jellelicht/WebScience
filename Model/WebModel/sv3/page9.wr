@@ -3,7 +3,7 @@
     <GetUnit gr:x="0" gr:y="0" id="sv3#page9#gtu5" name="UserParam" contextParameters="UserCtxParam">
       <Link id="sv3#page9#gtu5#ln12" name="Flow12" to="sv3#page9#dau3" automaticCoupling="true" type="transport" validate="true"/>
     </GetUnit>
-    <DataUnit gr:x="0" gr:y="180" id="sv3#page9#dau3" name="UserDetails" entity="User" displayAttributes="userName email" linkOrder="sv3#page9#dau3#ln5">
+    <DataUnit gr:x="0" gr:y="180" id="sv3#page9#dau3" name="UserDetails" entity="User" displayAttributes="userName email User#att16 User#att30 User#att31" linkOrder="sv3#page9#dau3#ln5">
       <Selector id="sv3#page9#dau3#su5" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#page9#dau3#su5#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
       </Selector>
@@ -25,9 +25,12 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv3#page9#dau3">
+          <layout:Link link="sv3#page9#dau3#ln5"/>
           <layout:Attribute attribute="userName"/>
           <layout:Attribute attribute="email"/>
-          <layout:Link link="sv3#page9#dau3#ln5"/>
+          <layout:Attribute attribute="User#att16"/>
+          <layout:Attribute attribute="User#att30"/>
+          <layout:Attribute attribute="User#att31"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

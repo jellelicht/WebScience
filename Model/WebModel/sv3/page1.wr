@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="740" gr:y="230" id="sv3#page1" name="Give Answer">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="725" gr:y="205" id="sv3#page1" name="Give Answer">
   <ContentUnits>
-    <EntryUnit id="sv3#page1#enu1" name="Answer" linkOrder="sv3#page1#enu1#ln1" gr:x="135" gr:y="0" entity="ent7">
+    <EntryUnit id="sv3#page1#enu1" name="Answer" linkOrder="sv3#page1#enu1#ln1" gr:x="145" gr:y="0" entity="ent7">
       <Field id="sv3#page1#enu1#fld1" name="Value" type="string" modifiable="true"/>
       <Link id="sv3#page1#enu1#ln1" name="Add" to="sv3#miu4" type="normal" validate="true">
         <LinkParameter id="sv3#page1#enu1#ln1#par25" name="Evaluation_evaluation" target="sv3#miu4.mov2#opm8#icu8#icp19" blank="true"/>
@@ -12,16 +12,28 @@
       <Field id="sv3#page1#enu1#fld6" name="item_id" type="string" modifiable="false" preloaded="true" hidden="true"/>
       <Field id="sv3#page1#enu1#fld8" name="worker_id" type="string" modifiable="false" preloaded="true" hidden="true"/>
     </EntryUnit>
-    <DataUnit id="sv3#page1#dau9" name="Item" gr:x="0" gr:y="0" entity="ent5" displayAttributes="ent5#att14 ent5#att15 ent5#att17">
+    <DataUnit id="sv3#page1#dau9" name="Item" gr:x="10" gr:y="0" entity="ent5" displayAttributes="ent5#att14 ent5#att15 ent5#att17">
       <Selector id="sv3#page1#dau9#su26" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#page1#dau9#su26#kcond19" name="KeyCondition6" predicate="in" implied="false"/>
       </Selector>
       <Link id="sv3#page1#dau9#ln40" name="Flow37" to="sv3#page1#enu1" type="transport" validate="true">
         <LinkParameter id="sv3#page1#dau9#ln40#par35" name="oid_PASSING" sourceLinkParameter="sv3#page12#inu2#ln41#par39" passing="true"/>
         <LinkParameter id="sv3#page1#dau9#ln40#par36" name="oid_item_id" source="data.ent5#att13" target="sv3#page1#enu1#fld6_slot"/>
-        <LinkParameter id="sv3#page1#dau9#ln40#par37" name="oid_PASSING_worker_id" sourceLinkParameter="sv3#page12#inu2#ln41#par39" target="sv3#page1#enu1#fld8_slot"/>
       </Link>
     </DataUnit>
+    <DataUnit gr:x="175" gr:y="120" id="sv3#page1#dau12" name="temp worker overview" entity="ent1" displayAttributes="userOID userName User#att16">
+      <Selector id="sv3#page1#dau12#su52" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#page1#dau12#su52#kcond35" name="KeyCondition35" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+    <GetUnit gr:x="0" gr:y="115" id="sv3#page1#gtu1" name="WorkerIs" contextParameters="UserCtxParam">
+      <Link id="sv3#page1#gtu1#ln87" name="Flow87" to="sv3#page1#enu1" type="transport" validate="true">
+        <LinkParameter id="sv3#page1#gtu1#ln87#par232" name="UserCtxParam.oid_worker_id" source="sv3#page1#gtu1.UserCtxParam" target="sv3#page1#enu1#fld8_slot"/>
+      </Link>
+      <Link id="sv3#page1#gtu1#ln88" name="Flow88" to="sv3#page1#dau12" type="transport" validate="true">
+        <LinkParameter id="sv3#page1#gtu1#ln88#par233" name="UserCtxParam.oid_KeyCondition35 [oid]" source="sv3#page1#gtu1.UserCtxParam" target="sv3#page1#dau12#su52#kcond35.userOID"/>
+      </Link>
+    </GetUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
@@ -51,6 +63,40 @@
           <layout:Attribute attribute="ent5#att17"/>
         </layout:Unit>
       </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page1#dau12">
+          <layout:Attribute attribute="userOID"/>
+          <layout:Attribute attribute="userName"/>
+          <layout:Attribute attribute="User#att16"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
