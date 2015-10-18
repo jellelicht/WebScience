@@ -1,34 +1,31 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4" name="Requester Home" protected="true" homePage="sv4#page11" landmarks="sv4#lou2 sv4#page11">
   <OperationUnits>
-    <ModuleInstanceUnit gr:x="955" gr:y="375" id="sv4#miu2" action="true" name="CreateCampaign" moduleId="mov2#opm2">
-      <OKLink id="sv4#miu2#oln12" name="OKFlow12" to="sv4#page11" automaticCoupling="true"/>
-    </ModuleInstanceUnit>
-    <LogoutUnit gr:x="1310" gr:y="395" id="sv4#lou2" name="Logout" siteView="sv2" landmark="true"/>
-    <DeleteUnit gr:x="970" gr:y="-20" id="sv4#dlu3" name="DeleteCampaign" entity="ent4">
+    <LogoutUnit gr:x="1275" gr:y="810" id="sv4#lou2" name="Logout" siteView="sv2" landmark="true"/>
+    <DeleteUnit gr:x="935" gr:y="395" id="sv4#dlu3" name="DeleteCampaign" entity="ent4">
       <Selector id="sv4#dlu3#su13" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#dlu3#su13#kcond11" name="KeyCondition11" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv4#dlu3#oln6" name="OKFlow6" to="sv4#page11" automaticCoupling="true"/>
     </DeleteUnit>
-    <CreateUnit gr:x="810" gr:y="435" id="sv4#cru10" name="CreateTask" entity="ent6">
+    <CreateUnit gr:x="750" gr:y="900" id="sv4#cru10" name="CreateTask" entity="ent6">
       <OKLink id="sv4#cru10#oln27" name="OKFlow27" to="sv4#page8" automaticCoupling="true"/>
     </CreateUnit>
-    <CreateUnit gr:x="65" gr:y="510" id="sv4#cru11" name="CreateItem" entity="ent5">
+    <CreateUnit gr:x="30" gr:y="925" id="sv4#cru11" name="CreateItem" entity="ent5">
       <OKLink id="sv4#cru11#oln28" name="OKFlow28" to="sv4#page14" automaticCoupling="true"/>
     </CreateUnit>
-    <DeleteUnit gr:x="270" gr:y="495" id="sv4#dlu5" name="DeleteItem" entity="ent5">
+    <DeleteUnit gr:x="235" gr:y="910" id="sv4#dlu5" name="DeleteItem" entity="ent5">
       <Selector id="sv4#dlu5#su20" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#dlu5#su20#kcond13" name="KeyCondition13" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv4#dlu5#oln30" name="OKFlow30" to="sv4#page14" automaticCoupling="true"/>
     </DeleteUnit>
-    <DeleteUnit gr:x="675" gr:y="430" id="sv4#dlu6" name="DeleteTask" entity="ent6">
+    <DeleteUnit gr:x="580" gr:y="875" id="sv4#dlu6" name="DeleteTask" entity="ent6">
       <Selector id="sv4#dlu6#su21" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#dlu6#su21#kcond14" name="KeyCondition14" predicate="in" implied="false"/>
       </Selector>
       <OKLink id="sv4#dlu6#oln29" name="OKFlow29" to="sv4#page8" automaticCoupling="true"/>
     </DeleteUnit>
-    <ConnectUnit gr:x="-135" gr:y="50" id="sv4#cnu2" name="Connect2" relationship="rel6#role11">
+    <ConnectUnit gr:x="-170" gr:y="465" id="sv4#cnu2" name="AddSkill" relationship="rel6#role11">
       <SourceSelector id="sv4#cnu2#su12" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#cnu2#su12#kcond8" name="KeyCondition8" predicate="in" implied="false"/>
       </SourceSelector>
@@ -37,7 +34,7 @@
       </TargetSelector>
       <OKLink id="sv4#cnu2#oln3" name="OKFlow3" to="sv4#page14" automaticCoupling="true"/>
     </ConnectUnit>
-    <DisconnectUnit gr:x="-165" gr:y="235" id="sv4#dcnu2" name="Disconnect" relationship="rel6#role11">
+    <DisconnectUnit gr:x="-200" gr:y="650" id="sv4#dcnu2" name="RemoveSkill" relationship="rel6#role11">
       <SourceSelector id="sv4#dcnu2#su23" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#dcnu2#su23#kcond17" name="KeyCondition17" predicate="in" implied="false"/>
       </SourceSelector>
@@ -45,7 +42,7 @@
         <KeyCondition id="sv4#dcnu2#su24#kcond18" name="KeyCondition18" predicate="in" implied="false"/>
       </TargetSelector>
     </DisconnectUnit>
-    <ConnectUnit gr:x="375" gr:y="485" id="sv4#cnu3" name="Connect3" relationship="rel1#role2">
+    <ConnectUnit gr:x="340" gr:y="900" id="sv4#cnu3" name="AssignTask" relationship="rel1#role2">
       <SourceSelector id="sv4#cnu3#su29" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#cnu3#su29#kcond20" name="KeyCondition20" predicate="in" implied="false"/>
       </SourceSelector>
@@ -54,7 +51,7 @@
       </TargetSelector>
       <OKLink id="sv4#cnu3#oln26" name="OKFlow26" to="sv4#page14" automaticCoupling="true"/>
     </ConnectUnit>
-    <DisconnectUnit gr:x="540" gr:y="-25" id="sv4#dcnu3" name="Remove assignment" relationship="rel1#role2">
+    <DisconnectUnit gr:x="550" gr:y="415" id="sv4#dcnu3" name="Remove assignment" relationship="rel1#role2">
       <SourceSelector id="sv4#dcnu3#su32" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#dcnu3#su32#kcond22" name="KeyCondition22" predicate="in" implied="false"/>
       </SourceSelector>
@@ -63,5 +60,25 @@
       </TargetSelector>
       <OKLink id="sv4#dcnu3#oln5" name="OKFlow5" to="sv4#page14" automaticCoupling="true"/>
     </DisconnectUnit>
+    <CreateUnit gr:x="955" gr:y="820" id="sv4#cru12" name="Create Campaign" entity="ent4">
+      <OKLink id="sv4#cru12#oln35" name="OKFlow35" to="sv4#page11" automaticCoupling="true"/>
+    </CreateUnit>
+    <ModuleInstanceUnit gr:x="660" gr:y="315" id="sv4#miu7" action="true" moduleId="mov2#opm10">
+      <KOLink id="sv4#miu7#kln13" name="KOFlow13" to="sv4#page5#mssu5">
+        <LinkParameter id="sv4#miu7#kln13#par158" name="answers_PASSING_Shown Messages" target="sv4#page5#mssu5.shownMessages" source="mov2#opm10#kocu8#ocp3"/>
+      </KOLink>
+      <OKLink id="sv4#miu7#oln53" name="OKFlow53" to="sv4#miu8" gr:bendpoints="45,-62,-15,68">
+        <LinkParameter id="sv4#miu7#oln53#par176" name="answers_PASSING_Answers" sourceLinkParameter="sv4#page5#enu6#ln77#par171" target="sv4#miu8.mov2#opm11#icu11#icp25"/>
+        <LinkParameter id="sv4#miu7#oln53#par177" name="evaluation_PASSING_Evaluation" sourceLinkParameter="sv4#page5#enu6#ln77#par151" target="sv4#miu8.mov2#opm11#icu11#icp26"/>
+      </OKLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="1000" gr:y="285" id="sv4#miu8" action="true" moduleId="mov2#opm11">
+      <OKLink id="sv4#miu8#oln54" name="OKFlow54" to="sv4#page5#mssu5" gr:bendpoints="-201,-55,139,65">
+        <LinkParameter id="sv4#miu8#oln54#par140" name="Good eval_Shown Messages" sourceValue="Good eval" target="sv4#page5#mssu5.shownMessages"/>
+      </OKLink>
+      <KOLink id="sv4#miu8#kln16" name="KOFlow16" to="sv4#page5#mssu5">
+        <LinkParameter id="sv4#miu8#kln16#par139" name="Eval of answers failed_Shown Messages" sourceValue="Eval of answers failed" target="sv4#page5#mssu5.shownMessages"/>
+      </KOLink>
+    </ModuleInstanceUnit>
   </OperationUnits>
 </SiteView>

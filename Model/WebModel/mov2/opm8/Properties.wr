@@ -1,0 +1,54 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="110" gr:y="90" id="mov2#opm8" name="CreateOrUpdateAnswer">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm8#icu8" gr:x="30" gr:y="60">
+      <Link id="mov2#opm8#icu8#ln16" name="Flow16" to="mov2#opm8#cru9" automaticCoupling="false" type="transport" validate="true">
+        <LinkParameter id="mov2#opm8#icu8#ln16#par12" name="Item.oid(AnswerToItem)" source="mov2#opm8#icu8#icp17" target="mov2#opm8#cru9.rel5#role9.ent5#att13"/>
+        <LinkParameter id="mov2#opm8#icu8#ln16#par14" name="Worker.oid(AnswerToWorker)" source="mov2#opm8#icu8#icp18" target="mov2#opm8#cru9.rel2#role4.userOID"/>
+        <LinkParameter id="mov2#opm8#icu8#ln16#par15" name="evaluation" source="mov2#opm8#icu8#icp19" target="mov2#opm8#cru9.ent7#att26"/>
+        <LinkParameter id="mov2#opm8#icu8#ln16#par16" name="value" source="mov2#opm8#icu8#icp20" target="mov2#opm8#cru9.ent7#att25"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm8#icu8#icp17" name="Item.oid(AnswerToItem)"/>
+      <InputCollectorParameter id="mov2#opm8#icu8#icp18" name="Worker.oid(AnswerToWorker)"/>
+      <InputCollectorParameter id="mov2#opm8#icu8#icp19" name="evaluation"/>
+      <InputCollectorParameter id="mov2#opm8#icu8#icp20" name="value"/>
+      <Link id="mov2#opm8#icu8#ln20" name="Flow20" to="mov2#opm8#mfu1" type="transport" validate="true">
+        <LinkParameter id="mov2#opm8#icu8#ln20#par21" name="evaluation_evaluation" source="mov2#opm8#icu8#icp19" target="mov2#opm8#mfu1.ent7#att26"/>
+        <LinkParameter id="mov2#opm8#icu8#ln20#par22" name="Item.oid(AnswerToItem)_Item.oid(AnswerToItem)" source="mov2#opm8#icu8#icp17" target="mov2#opm8#mfu1.rel5#role9.ent5#att13"/>
+        <LinkParameter id="mov2#opm8#icu8#ln20#par23" name="value_value" source="mov2#opm8#icu8#icp20" target="mov2#opm8#mfu1.ent7#att25"/>
+        <LinkParameter id="mov2#opm8#icu8#ln20#par24" name="Worker.oid(AnswerToWorker)_Worker.oid(AnswerToWorker)" source="mov2#opm8#icu8#icp18" target="mov2#opm8#mfu1.rel2#role4.userOID"/>
+      </Link>
+      <OKLink id="mov2#opm8#icu8#oln31" name="OKFlow31" to="mov2#opm8#seu6" gr:bendpoints="103,173,-117,-142">
+        <LinkParameter id="mov2#opm8#icu8#oln31#par56" name="Item.oid(AnswerToItem)_RoleCondition8 [oid]" source="mov2#opm8#icu8#icp18" target="mov2#opm8#seu6#su27#rcond8.userOID"/>
+        <LinkParameter id="mov2#opm8#icu8#oln31#par57" name="Item.oid(AnswerToItem)_SameItem [oid]" source="mov2#opm8#icu8#icp17" target="mov2#opm8#seu6#su27#rcond9.ent5#att13"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <SwitchUnit id="mov2#opm8#switch5" name="Exists" gr:x="475" gr:y="205">
+      <Case value="0"/>
+      <OKLink id="mov2#opm8#switch5#oln4" name="OKFlow4" to="mov2#opm8#cru9" code="0"/>
+      <OKLink id="mov2#opm8#switch5#oln8" name="OKFlow5" to="mov2#opm8#mfu1"/>
+    </SwitchUnit>
+    <SelectorUnit id="mov2#opm8#seu6" name="FindExisting" gr:x="430" gr:y="20" entity="ent7">
+      <OKLink id="mov2#opm8#seu6#oln11" name="OKFlow3" to="mov2#opm8#switch5">
+        <LinkParameter id="mov2#opm8#seu6#oln11#par11" name="Data Size_Switch" source="dataSize" target="mov2#opm8#switch5.switch"/>
+      </OKLink>
+      <Link id="mov2#opm8#seu6#ln30" name="Flow30" to="mov2#opm8#mfu1" automaticCoupling="true" type="transport" validate="true"/>
+      <Selector id="mov2#opm8#seu6#su27" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm8#seu6#su27#rcond8" name="SameWorker" predicate="in" implied="false" role="rel2#role3"/>
+        <RelationshipRoleCondition id="mov2#opm8#seu6#su27#rcond9" name="SameItem" predicate="in" implied="false" role="rel5#role10"/>
+      </Selector>
+    </SelectorUnit>
+    <KOCollectorUnit id="mov2#opm8#kocu6" name="DB Error" gr:x="915" gr:y="0"/>
+    <OKCollectorUnit id="mov2#opm8#okcu9" name="Success" gr:x="915" gr:y="600"/>
+    <ModifyUnit gr:x="650" gr:y="85" id="mov2#opm8#mfu1" name="Update Answer" entity="ent7">
+      <Selector id="mov2#opm8#mfu1#su25" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm8#mfu1#su25#kcond16" name="KeyCondition16" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov2#opm8#mfu1#kln11" name="KOFlow11" to="mov2#opm8#kocu6" automaticCoupling="true"/>
+      <OKLink id="mov2#opm8#mfu1#oln32" name="OKFlow32" to="mov2#opm8#okcu9" automaticCoupling="true"/>
+    </ModifyUnit>
+    <CreateUnit gr:x="465" gr:y="315" id="mov2#opm8#cru9" name="Create Answer" entity="ent7">
+      <KOLink id="mov2#opm8#cru9#kln12" name="KOFlow12" to="mov2#opm8#kocu6" automaticCoupling="true"/>
+      <OKLink id="mov2#opm8#cru9#oln33" name="OKFlow33" to="mov2#opm8#okcu9" automaticCoupling="true"/>
+    </CreateUnit>
+  </OperationUnits>
+</OperationModule>

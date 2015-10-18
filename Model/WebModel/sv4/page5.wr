@@ -1,0 +1,147 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="315" gr:y="25" id="sv4#page5" name="Answers for worker">
+  <ContentUnits>
+    <MultiMessageUnit gr:x="470" gr:y="140" id="sv4#page5#mssu5" name="Status message"/>
+    <ModuleInstanceUnit gr:x="185" gr:y="15" id="sv4#page5#miu6" action="true" moduleId="mov2#opm9">
+      <Link id="sv4#page5#miu6#ln71" name="Flow71" to="sv4#page5#mdu2" type="transport" validate="true">
+        <LinkParameter id="sv4#page5#miu6#ln71#par109" name="answers_KeyCondition25 [oid]" source="mov2#opm9#okcu12#ocp1" target="sv4#page5#mdu2#su42#kcond26.ent7#att24"/>
+      </Link>
+      <Link id="sv4#page5#miu6#ln78" name="Flow78" to="sv4#page5#enu6" type="transport" validate="true">
+        <LinkParameter id="sv4#page5#miu6#ln78#par154" name="answers_PASSING" source="mov2#opm9#okcu12#ocp1" passing="true"/>
+      </Link>
+    </ModuleInstanceUnit>
+    <DataUnit gr:x="0" gr:y="20" id="sv4#page5#dau10" name="Worker overview" entity="ent1" displayAttributes="userOID User#att30">
+      <Selector id="sv4#page5#dau10#su40" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#page5#dau10#su40#kcond24" name="KeyCondition24" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv4#page5#dau10#ln70" name="Flow70" to="sv4#page5#miu6" type="transport" validate="true">
+        <LinkParameter id="sv4#page5#dau10#ln70#par107" name="oid_PASSING_Task_id" sourceLinkParameter="sv4#page14#pwu2#ln66#par103" target="sv4#page5#miu6.mov2#opm9#icu9#icp21"/>
+        <LinkParameter id="sv4#page5#dau10#ln70#par108" name="oid_Worker_id" source="data.userOID" target="sv4#page5#miu6.mov2#opm9#icu9#icp22"/>
+      </Link>
+      <Link id="sv4#page5#dau10#ln72" name="Flow72" to="sv4#page5#enu6" type="transport" validate="true">
+        <LinkParameter id="sv4#page5#dau10#ln72#par113" name="oid_PASSING_task" sourceLinkParameter="sv4#page14#pwu2#ln66#par103" target="sv4#page5#enu6#fld11_slot"/>
+        <LinkParameter id="sv4#page5#dau10#ln72#par114" name="oid_worker" source="data.userOID" target="sv4#page5#enu6#fld13_slot"/>
+      </Link>
+      <Link id="sv4#page5#dau10#ln80" name="Flow80" to="sv4#page5#dau11" type="transport" validate="true">
+        <LinkParameter id="sv4#page5#dau10#ln80#par178" name="oid_PASSING_KeyCondition29 [oid]" sourceLinkParameter="sv4#page14#pwu2#ln66#par103" target="sv4#page5#dau11#su45#kcond29.ent6#att18"/>
+      </Link>
+    </DataUnit>
+    <MultiDataUnit id="sv4#page5#mdu2" entity="ent7" displayAttributes="ent7#att24 ent7#att25 ent7#att26" gr:x="475" gr:y="0" name="List6">
+      <Selector id="sv4#page5#mdu2#su42" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#page5#mdu2#su42#kcond26" predicate="in" implied="false" name="KeyCondition25"/>
+      </Selector>
+    </MultiDataUnit>
+    <EntryUnit gr:x="225" gr:y="140" id="sv4#page5#enu6" name="Evaluate Answers" linkOrder="sv4#page5#enu6#ln77">
+      <Field id="sv4#page5#enu6#fld10" name="evaluation" type="string" modifiable="true"/>
+      <Field id="sv4#page5#enu6#fld11" name="task" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="sv4#page5#enu6#fld13" name="worker" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Field id="sv4#page5#enu6#fld14" name="answers" type="string" modifiable="false" preloaded="true" hidden="true"/>
+      <Link id="sv4#page5#enu6#ln77" name="Evaluate task" to="sv4#miu7" type="normal" validate="true">
+        <LinkParameter id="sv4#page5#enu6#ln77#par151" name="evaluation_PASSING" source="sv4#page5#enu6#fld10" passing="true"/>
+        <LinkParameter id="sv4#page5#enu6#ln77#par155" name="task_Task_id" source="sv4#page5#enu6#fld11" target="sv4#miu7.mov2#opm10#icu10#icp23"/>
+        <LinkParameter id="sv4#page5#enu6#ln77#par156" name="worker_Worker_id" source="sv4#page5#enu6#fld13" target="sv4#miu7.mov2#opm10#icu10#icp24"/>
+        <LinkParameter id="sv4#page5#enu6#ln77#par171" name="answers_PASSING" sourceLinkParameter="sv4#page5#miu6#ln78#par154" passing="true"/>
+      </Link>
+    </EntryUnit>
+    <DataUnit gr:x="80" gr:y="150" id="sv4#page5#dau11" name="Task overview" entity="ent6" displayAttributes="ent6#att19 ent6#att20 ent6#att21">
+      <Selector id="sv4#page5#dau11#su45" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv4#page5#dau11#su45#kcond29" name="KeyCondition29" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page5#mssu5"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page5#mdu2">
+          <layout:Attribute attribute="ent7#att24"/>
+          <layout:Attribute attribute="ent7#att25"/>
+          <layout:Attribute attribute="ent7#att26"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page5#dau10">
+          <layout:Attribute attribute="userOID"/>
+          <layout:Attribute attribute="User#att30"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page5#enu6">
+          <layout:Field field="sv4#page5#enu6#fld10"/>
+          <layout:Link link="sv4#page5#enu6#ln77"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv4#page5#dau11">
+          <layout:Attribute attribute="ent6#att19"/>
+          <layout:Attribute attribute="ent6#att20"/>
+          <layout:Attribute attribute="ent6#att21"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="0" gr:y="-30" id="sv4#page14" name="Detail view for task">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="-35" gr:y="360" id="sv4#page14" name="Detail view for task">
   <ContentUnits>
-    <DataUnit gr:x="245" gr:y="80" id="sv4#page14#dau7" name="Task" entity="ent6" displayAttributes="ent6#att19 ent6#att20 ent6#att21 ent6#att22 ent6#att23">
+    <DataUnit gr:x="215" gr:y="130" id="sv4#page14#dau7" name="Task" entity="ent6" displayAttributes="ent6#att19 ent6#att20 ent6#att21 ent6#att22 ent6#att23">
       <Selector id="sv4#page14#dau7#su18" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#page14#dau7#su18#kcond12" name="KeyCondition12" predicate="in" implied="false"/>
       </Selector>
@@ -17,16 +17,19 @@
       </Link>
       <Link id="sv4#page14#dau7#ln48" name="Flow48" to="sv4#page14#seu7" automaticCoupling="true" type="transport" validate="true"/>
       <Link id="sv4#page14#dau7#ln49" name="Flow49" to="sv4#cnu3" automaticCoupling="true" type="transport" validate="true"/>
-      <Link id="sv4#page14#dau7#ln61" name="Flow61" to="sv4#page14#pwu2" automaticCoupling="true" type="transport" validate="true"/>
+      <Link id="sv4#page14#dau7#ln61" name="Flow61" to="sv4#page14#pwu2" type="transport" validate="true">
+        <LinkParameter id="sv4#page14#dau7#ln61#par94" name="oid_RoleCondition11 [oid]" source="data.ent6#att18" target="sv4#page14#pwu2#su34#rcond12.ent6#att18"/>
+        <LinkParameter id="sv4#page14#dau7#ln61#par95" name="oid_PASSING" source="data.ent6#att18" passing="true"/>
+      </Link>
       <Link id="sv4#page14#dau7#ln62" name="Flow62" to="sv4#dcnu3" automaticCoupling="true" type="transport" validate="true"/>
     </DataUnit>
-    <PowerIndexUnit gr:x="170" gr:y="230" id="sv4#page14#pwu5" name="Associated items" sortable="true" checkable="false" useCountQuery="false" entity="ent5" displayAttributes="ent5#att14 ent5#att15 ent5#att17" linkOrder="sv4#page14#pwu5#ln59" blockFactor="5" blockWindow="1">
+    <PowerIndexUnit gr:x="170" gr:y="255" id="sv4#page14#pwu5" name="Associated items" sortable="true" checkable="false" useCountQuery="false" entity="ent5" displayAttributes="ent5#att14 ent5#att15 ent5#att17" linkOrder="sv4#page14#pwu5#ln59" blockFactor="5" blockWindow="1">
       <Selector id="sv4#page14#pwu5#su19" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv4#page14#pwu5#su19#rcond6" name="RoleCondition6" predicate="in" implied="false" role="rel7#role14"/>
       </Selector>
       <Link id="sv4#page14#pwu5#ln59" name="Delete" to="sv4#dlu5" automaticCoupling="true" type="normal" validate="true"/>
     </PowerIndexUnit>
-    <EntryUnit gr:x="40" gr:y="255" id="sv4#page14#enu10" name="Add item" linkOrder="sv4#page14#enu10#ln56" entity="ent5">
+    <EntryUnit gr:x="40" gr:y="280" id="sv4#page14#enu10" name="Add item" linkOrder="sv4#page14#enu10#ln56" entity="ent5">
       <Link id="sv4#page14#enu10#ln56" name="Add Item" to="sv4#cru11" type="normal" validate="true">
         <LinkParameter id="sv4#page14#enu10#ln56#par126" name="caption_caption" source="sv4#page14#enu10#fld40" target="sv4#cru11.ent5#att15"/>
         <LinkParameter id="sv4#page14#enu10#ln56#par127" name="_Item Object" blank="true" target="sv4#cru11.entityBeans"/>
@@ -40,7 +43,7 @@
       <Field id="sv4#page14#enu10#fld40" name="caption" type="string" modifiable="true" attribute="ent5#att15"/>
       <Field id="sv4#page14#enu10#fld41" name="url" type="blob" modifiable="true" attribute="ent5#att17"/>
     </EntryUnit>
-    <PowerIndexUnit gr:x="0" gr:y="130" id="sv4#page14#pwu1" name="Associated Skills" sortable="true" checkable="false" useCountQuery="false" entity="ent3" displayAttributes="ent3#att7" linkOrder="sv4#page14#pwu1#ln33">
+    <PowerIndexUnit gr:x="0" gr:y="155" id="sv4#page14#pwu1" name="Associated Skills" sortable="true" checkable="false" useCountQuery="false" entity="ent3" displayAttributes="ent3#att7" linkOrder="sv4#page14#pwu1#ln33">
       <Selector id="sv4#page14#pwu1#su10" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv4#page14#pwu1#su10#rcond4" name="RoleCondition4" predicate="in" implied="false" role="rel6#role12"/>
       </Selector>
@@ -48,7 +51,7 @@
         <LinkParameter id="sv4#page14#pwu1#ln33#par52" name="oid_KeyCondition17 [oid] [Skill] [Source]" source="data[].ent3#att6" target="sv4#dcnu2#su23#kcond17.ent3#att6"/>
       </Link>
     </PowerIndexUnit>
-    <EntryUnit gr:x="15" gr:y="50" id="sv4#page14#enu11" name="Add Skill" linkOrder="sv4#page14#enu11#ln29">
+    <EntryUnit gr:x="30" gr:y="60" id="sv4#page14#enu11" name="Add Skill" linkOrder="sv4#page14#enu11#ln29">
       <SelectionField id="sv4#page14#enu11#sfld3" name="Skill" type="string"/>
       <Field id="sv4#page14#enu11#fld7" name="oid" type="string" modifiable="false" hidden="true" preloaded="true"/>
       <Link id="sv4#page14#enu11#ln29" name="Add skill" to="sv4#cnu2" type="normal" validate="true">
@@ -56,25 +59,29 @@
         <LinkParameter id="sv4#page14#enu11#ln29#par49" name="Selection Field3_KeyCondition8 [oid] [Skill] [Source]" source="sv4#page14#enu11#sfld3" target="sv4#cnu2#su12#kcond8.ent3#att6"/>
       </Link>
     </EntryUnit>
-    <SelectorUnit id="sv4#page14#seu5" name="Skills" gr:x="175" gr:y="0" entity="ent3">
+    <SelectorUnit id="sv4#page14#seu5" name="Skills" gr:x="175" gr:y="25" entity="ent3">
       <Link id="sv4#page14#seu5#ln25" name="Flow25" to="sv4#page14#enu11" type="transport" validate="true">
         <LinkParameter id="sv4#page14#seu5#ln25#par44" name="name_Selection Field3 [label]" source="ent3#att7Array" target="sv4#page14#enu11#sfld3_label"/>
         <LinkParameter id="sv4#page14#seu5#ln25#par45" name="oid_Selection Field3 [output]" source="ent3#att6Array" target="sv4#page14#enu11#sfld3_output"/>
       </Link>
     </SelectorUnit>
-    <SelectorUnit gr:x="370" gr:y="130" id="sv4#page14#seu7" name="Selector7" entity="ent3">
+    <SelectorUnit gr:x="370" gr:y="155" id="sv4#page14#seu7" name="TaskSkills" entity="ent3">
       <Selector id="sv4#page14#seu7#su28" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv4#page14#seu7#su28#rcond10" name="RoleCondition10" predicate="in" implied="false" role="rel6#role12"/>
       </Selector>
       <Link id="sv4#page14#seu7#ln47" name="Flow47" to="sv4#page14#pwu3" automaticCoupling="true" type="transport" validate="true"/>
     </SelectorUnit>
-    <PowerIndexUnit id="sv4#page14#pwu2" entity="ent1" displayAttributes="email User#att30 ent1#att32" sortable="true" checkable="false" useCountQuery="false" gr:x="340" gr:y="0" name="Assigned workers" linkOrder="sv4#page14#pwu2#ln64">
+    <PowerIndexUnit id="sv4#page14#pwu2" entity="ent1" displayAttributes="email User#att30 ent1#att32" sortable="true" checkable="false" useCountQuery="false" gr:x="315" gr:y="0" name="Assigned workers" linkOrder="sv4#page14#pwu2#ln64 sv4#page14#pwu2#ln66">
       <Selector id="sv4#page14#pwu2#su34" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv4#page14#pwu2#su34#rcond12" role="rel1#role2" predicate="in" implied="false" name="RoleCondition11"/>
       </Selector>
       <Link id="sv4#page14#pwu2#ln64" name="Remove assignment" to="sv4#dcnu3" type="normal" automaticCoupling="true" validate="true"/>
+      <Link id="sv4#page14#pwu2#ln66" name="See Answers" to="sv4#page5#dau10" type="normal" validate="true">
+        <LinkParameter id="sv4#page14#pwu2#ln66#par103" name="oid_PASSING" sourceLinkParameter="sv4#page14#dau7#ln61#par95" passing="true"/>
+        <LinkParameter id="sv4#page14#pwu2#ln66#par105" name="oid_KeyCondition24 [oid]" source="data[].userOID" target="sv4#page5#dau10#su40#kcond24.userOID"/>
+      </Link>
     </PowerIndexUnit>
-    <PowerIndexUnit id="sv4#page14#pwu3" entity="ent1" displayAttributes="email User#att30 ent1#att32" sortable="true" checkable="false" useCountQuery="false" name="Skilled workers" gr:x="340" gr:y="255" linkOrder="sv4#page14#pwu3#ln65">
+    <PowerIndexUnit id="sv4#page14#pwu3" entity="ent1" displayAttributes="email User#att30 ent1#att32" sortable="true" checkable="false" useCountQuery="false" name="Skilled workers" gr:x="340" gr:y="280" linkOrder="sv4#page14#pwu3#ln65">
       <Selector id="sv4#page14#pwu3#su35" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv4#page14#pwu3#su35#rcond13" role="rel4#role8" predicate="in" implied="false" name="RoleCondition8"/>
       </Selector>
@@ -217,6 +224,7 @@
           <layout:Attribute attribute="User#att30"/>
           <layout:Attribute attribute="ent1#att32"/>
           <layout:Link link="sv4#page14#pwu2#ln64"/>
+          <layout:Link link="sv4#page14#pwu2#ln66"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

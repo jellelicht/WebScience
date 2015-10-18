@@ -1,0 +1,33 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="135" gr:y="315" id="mov2#opm9" name="AllAnswers">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm9#icu9" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm9#icu9#icp21" name="Task_id"/>
+      <InputCollectorParameter id="mov2#opm9#icu9#icp22" name="Worker_id"/>
+      <OKLink id="mov2#opm9#icu9#oln47" name="OKFlow47" to="mov2#opm9#seu10">
+        <LinkParameter id="mov2#opm9#icu9#oln47#par99" name="Task_id_SameTask [oid]" source="mov2#opm9#icu9#icp21" target="mov2#opm9#seu10#su36#rcond15.ent6#att18"/>
+        <LinkParameter id="mov2#opm9#icu9#oln47#par100" name="Worker_id_PASSING" source="mov2#opm9#icu9#icp22" passing="true"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <SelectorUnit gr:x="485" gr:y="65" id="mov2#opm9#seu9" name="AllAnsweredQuestions" entity="ent7">
+      <Selector id="mov2#opm9#seu9#su31" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm9#seu9#su31#rcond11" name="SameTask" predicate="in" implied="false" role="rel5#role10"/>
+        <RelationshipRoleCondition id="mov2#opm9#seu9#su31#rcond14" name="SameWorker" predicate="in" implied="false" role="rel2#role3"/>
+      </Selector>
+      <OKLink id="mov2#opm9#seu9#oln46" name="OKFlow46" to="mov2#opm9#okcu12">
+        <LinkParameter id="mov2#opm9#seu9#oln46#par92" name="oid_answers" source="ent7#att24Array" target="mov2#opm9#okcu12#ocp1"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm9#seu10" name="AllQuestions" gr:x="300" gr:y="60" entity="ent5">
+      <Selector id="mov2#opm9#seu10#su36" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm9#seu10#su36#rcond15" name="SameTask" predicate="in" implied="false" role="rel7#role14"/>
+      </Selector>
+      <OKLink id="mov2#opm9#seu10#oln48" name="OKFlow48" to="mov2#opm9#seu9">
+        <LinkParameter id="mov2#opm9#seu10#oln48#par101" name="oid_SameTask [oid]" source="ent5#att13Array" target="mov2#opm9#seu9#su31#rcond11.ent5#att13"/>
+        <LinkParameter id="mov2#opm9#seu10#oln48#par102" name="Worker_id_PASSING_SameWorker [oid]" sourceLinkParameter="mov2#opm9#icu9#oln47#par100" target="mov2#opm9#seu9#su31#rcond14.userOID"/>
+      </OKLink>
+    </SelectorUnit>
+    <OKCollectorUnit gr:x="665" gr:y="200" id="mov2#opm9#okcu12" name="OK Port12">
+      <OutputCollectorParameter id="mov2#opm9#okcu12#ocp1" name="answers"/>
+    </OKCollectorUnit>
+  </OperationUnits>
+</OperationModule>

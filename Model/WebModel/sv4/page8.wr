@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="635" gr:y="95" id="sv4#page8" name="Detail view for campaign">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="545" gr:y="540" id="sv4#page8" name="Detail view for campaign">
   <ContentUnits>
     <EntryUnit gr:x="190" gr:y="105" id="sv4#page8#enu8" name="Add task" entity="ent6" linkOrder="sv4#page8#enu8#ln50">
       <Field id="sv4#page8#enu8#fld31" name="title" type="string" modifiable="true" attribute="ent6#att19"/>

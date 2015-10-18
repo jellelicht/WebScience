@@ -60,7 +60,7 @@
       <db:JoinColumn attribute="userOID" name="user_oid"/>
     </Generalization>
   </Entity>
-  <Entity gr:x="410" gr:y="375" id="ent3" name="Skill" duration="persistent" attributeOrder="ent3#att6 ent3#att7" db:database="db1" db:table="skill">
+  <Entity gr:x="605" gr:y="355" id="ent3" name="Skill" duration="persistent" attributeOrder="ent3#att6 ent3#att7" db:database="db1" db:table="skill">
     <Attribute id="ent3#att6" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent3#att7" name="name" type="string" db:column="name"/>
   </Entity>
@@ -78,7 +78,7 @@
     <Attribute id="ent4#att11" name="budget" type="integer" db:column="budget"/>
     <Attribute id="ent4#att12" name="status" type="boolean" db:column="status"/>
   </Entity>
-  <Entity gr:x="405" gr:y="485" id="ent5" name="Item" duration="persistent" attributeOrder="ent5#att13 ent5#att14 ent5#att15 ent5#att17" db:database="db1" db:table="item">
+  <Entity gr:x="900" gr:y="525" id="ent5" name="Item" duration="persistent" attributeOrder="ent5#att13 ent5#att14 ent5#att15 ent5#att17" db:database="db1" db:table="item">
     <Attribute id="ent5#att13" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent5#att14" name="title" type="string" db:column="title"/>
     <Attribute id="ent5#att15" name="caption" type="string" db:column="caption"/>
@@ -108,12 +108,12 @@
       <db:JoinColumn attribute="ent6#att18" name="task_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="75" gr:y="515" id="ent7" name="Answer" duration="persistent" attributeOrder="ent7#att24 ent7#att25 ent7#att26" db:database="db1" db:table="answer">
+  <Entity gr:x="555" gr:y="535" id="ent7" name="Answer" duration="persistent" attributeOrder="ent7#att24 ent7#att25 ent7#att26" db:database="db1" db:table="answer">
     <Attribute id="ent7#att24" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent7#att25" name="value" type="string" db:column="value"/>
     <Attribute id="ent7#att26" name="evaluation" type="string" db:column="evaluation"/>
   </Entity>
-  <Entity gr:x="790" gr:y="570" id="ent8" name="CompletedTask" duration="persistent" attributeOrder="ent8#att27 ent8#att28 ent8#att29" db:database="db1" db:table="completedtask">
+  <Entity gr:x="90" gr:y="580" id="ent8" name="CompletedTask" duration="persistent" attributeOrder="ent8#att27 ent8#att28 ent8#att29" db:database="db1" db:table="completedtask">
     <Attribute id="ent8#att27" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent8#att28" name="finished" type="boolean" db:column="finished"/>
     <Attribute id="ent8#att29" name="startTime" type="integer" db:column="starttime"/>
@@ -142,6 +142,22 @@
     </RelationshipRole1>
     <RelationshipRole2 id="rel3#role6" name="TaskToCampaign" maxCard="1">
       <db:JoinColumn attribute="ent6#att18" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel2" name="Worker_Answer" sourceEntity="ent1" targetEntity="ent7" db:database="db1" db:table="answer">
+    <RelationshipRole1 id="rel2#role3" name="WorkerToAnswer" maxCard="N">
+      <db:JoinColumn attribute="userOID" name="worker_oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel2#role4" name="AnswerToWorker" maxCard="1">
+      <db:JoinColumn attribute="ent7#att24" name="oid"/>
+    </RelationshipRole2>
+  </Relationship>
+  <Relationship id="rel5" name="Answer_Item" sourceEntity="ent7" targetEntity="ent5" db:database="db1" db:table="answer">
+    <RelationshipRole1 id="rel5#role9" name="AnswerToItem" maxCard="1">
+      <db:JoinColumn attribute="ent7#att24" name="oid"/>
+    </RelationshipRole1>
+    <RelationshipRole2 id="rel5#role10" name="ItemToAnswer" maxCard="N">
+      <db:JoinColumn attribute="ent5#att13" name="item_oid"/>
     </RelationshipRole2>
   </Relationship>
 </DataModel>

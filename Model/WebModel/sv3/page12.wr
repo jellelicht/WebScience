@@ -1,6 +1,6 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="390" gr:y="50" id="sv3#page12" name="ExecuteTask">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="395" gr:y="50" id="sv3#page12" name="ExecuteTask">
   <ContentUnits>
-    <DataUnit gr:x="5" gr:y="0" id="sv3#page12#dau4" name="Task" entity="ent6" displayAttributes="ent6#att19 ent6#att20 ent6#att21 ent6#att22 ent6#att23">
+    <DataUnit gr:x="0" gr:y="0" id="sv3#page12#dau4" name="Task" entity="ent6" displayAttributes="ent6#att19 ent6#att20 ent6#att21 ent6#att22 ent6#att23">
       <Selector id="sv3#page12#dau4#su7" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#page12#dau4#su7#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
       </Selector>
@@ -9,24 +9,20 @@
         <LinkParameter id="sv3#page12#dau4#ln14#par8" name="oid_PASSING" source="data.ent6#att18" passing="true"/>
       </Link>
     </DataUnit>
-    <IndexUnit gr:x="0" gr:y="170" id="sv3#page12#inu2" name="ItemsList" entity="ent5" displayAttributes="ent5#att14 ent5#att15 ent5#att17" linkOrder="sv3#page12#inu2#ln15">
+    <IndexUnit gr:x="165" gr:y="170" id="sv3#page12#inu2" name="ItemsList" entity="ent5" displayAttributes="ent5#att14 ent5#att15 ent5#att17" linkOrder="sv3#page12#inu2#ln9 sv3#page12#inu2#ln41">
       <Selector id="sv3#page12#inu2#su8" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page12#inu2#su8#rcond3" name="RoleCondition3" predicate="in" implied="false" role="rel7#role14"/>
       </Selector>
-      <Link id="sv3#page12#inu2#ln15" name="Details" to="sv3#page12#dau5" type="normal" validate="true">
-        <LinkParameter id="sv3#page12#inu2#ln15#par9" name="oid_KeyCondition6 [oid]" source="data[].ent5#att13" target="sv3#page12#dau5#su9#kcond6.ent5#att13"/>
-        <LinkParameter id="sv3#page12#inu2#ln15#par10" name="oid_PASSING" sourceLinkParameter="sv3#page12#dau4#ln14#par8" passing="true"/>
+      <Link id="sv3#page12#inu2#ln9" name="View Answer" to="sv3#page12#dau8" automaticCoupling="true" type="normal" validate="true"/>
+      <Link id="sv3#page12#inu2#ln41" name="Details" to="sv3#page1#dau9" type="normal" validate="true">
+        <LinkParameter id="sv3#page12#inu2#ln41#par38" name="oid_KeyCondition6 [oid]" source="data[].ent5#att13" target="sv3#page1#dau9#su26#kcond19.ent5#att13"/>
+        <LinkParameter id="sv3#page12#inu2#ln41#par39" name="oid_PASSING" sourceLinkParameter="sv3#page12#dau4#ln14#par8" passing="true"/>
       </Link>
     </IndexUnit>
-    <DataUnit gr:x="0" gr:y="340" id="sv3#page12#dau5" name="Item" entity="ent5" linkOrder="sv3#page12#dau5#ln3" displayAttributes="ent5#att14 ent5#att15 ent5#att17">
-      <Selector id="sv3#page12#dau5#su9" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv3#page12#dau5#su9#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+    <DataUnit gr:x="5" gr:y="165" id="sv3#page12#dau8" name="Answer" entity="ent7" displayAttributes="ent7#att25 ent7#att26">
+      <Selector id="sv3#page12#dau8#su15" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv3#page12#dau8#su15#rcond7" name="RoleCondition7" predicate="in" implied="false" role="rel5#role10"/>
       </Selector>
-      <Link id="sv3#page12#dau5#ln3" name="Answer" to="sv3#page1#enu1" type="normal" validate="true">
-        <LinkParameter id="sv3#page12#dau5#ln3#par7" name="oid_Key Condition [oid]" source="data.ent5#att13" target="sv3#page1#enu1.ent7#att24"/>
-        <LinkParameter id="sv3#page12#dau5#ln3#par13" name="oid_PASSING" sourceLinkParameter="sv3#page12#inu2#ln15#par10" passing="true"/>
-      </Link>
-      <Link id="sv3#page12#dau5#ln17" name="Flow17" to="sv3#cru7" automaticCoupling="true" type="transport" validate="true"/>
     </DataUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
@@ -58,28 +54,8 @@
           <layout:Attribute attribute="ent5#att14"/>
           <layout:Attribute attribute="ent5#att15"/>
           <layout:Attribute attribute="ent5#att17"/>
-          <layout:Link link="sv3#page12#inu2#ln15"/>
-        </layout:Unit>
-      </layout:Cell>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-      <layout:Cell/>
-    </layout:Row>
-    <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv3#page12#dau5">
-          <layout:Link link="sv3#page12#dau5#ln3"/>
-          <layout:Attribute attribute="ent5#att14"/>
-          <layout:Attribute attribute="ent5#att15"/>
-          <layout:Attribute attribute="ent5#att17"/>
+          <layout:Link link="sv3#page12#inu2#ln9"/>
+          <layout:Link link="sv3#page12#inu2#ln41"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
@@ -96,6 +72,25 @@
     </layout:Row>
     <layout:Row>
       <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv3#page12#dau8">
+          <layout:Attribute attribute="ent7#att25"/>
+          <layout:Attribute attribute="ent7#att26"/>
+        </layout:Unit>
+      </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>

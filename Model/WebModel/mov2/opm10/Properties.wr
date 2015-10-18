@@ -1,0 +1,54 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm10" name="AllAnswered" gr:x="140" gr:y="210">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm10#icu10" gr:x="30" gr:y="60">
+      <InputCollectorParameter id="mov2#opm10#icu10#icp23" name="Task_id"/>
+      <InputCollectorParameter id="mov2#opm10#icu10#icp24" name="Worker_id"/>
+      <OKLink id="mov2#opm10#icu10#oln55" name="OKFlow55" to="mov2#opm10#seu14" gr:bendpoints="148,71,-107,-24">
+        <LinkParameter id="mov2#opm10#icu10#oln55#par165" name="Task_id_SameTask [oid]" source="mov2#opm10#icu10#icp23" target="mov2#opm10#seu14#su39#rcond20.ent6#att18"/>
+        <LinkParameter id="mov2#opm10#icu10#oln55#par166" name="Worker_id_PASSING" source="mov2#opm10#icu10#icp24" passing="true"/>
+      </OKLink>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#opm10#seu13" name="AllAnsweredQuestions" gr:x="570" gr:y="35" entity="ent7">
+      <Selector id="mov2#opm10#seu13#su38" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm10#seu13#su38#rcond18" name="SameTask" predicate="in" implied="false" role="rel5#role10"/>
+        <RelationshipRoleCondition id="mov2#opm10#seu13#su38#rcond19" name="SameWorker" predicate="in" implied="false" role="rel2#role3"/>
+      </Selector>
+      <OKLink id="mov2#opm10#seu13#oln42" name="OKFlow37" to="mov2#opm10#mathu2">
+        <LinkParameter id="mov2#opm10#seu13#oln42#par88" name="Data Size_so" source="dataSize" target="mov2#opm10#mathu2#mathv4"/>
+        <LinkParameter id="mov2#opm10#seu13#oln42#par170" name="Data Size_PASSING_fo" sourceLinkParameter="mov2#opm10#seu14#oln56#par169" target="mov2#opm10#mathu2#mathv3"/>
+      </OKLink>
+    </SelectorUnit>
+    <SelectorUnit id="mov2#opm10#seu14" name="AllQuestions" gr:x="325" gr:y="70" entity="ent5">
+      <Selector id="mov2#opm10#seu14#su39" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="mov2#opm10#seu14#su39#rcond20" name="SameTask" predicate="in" implied="false" role="rel7#role14"/>
+      </Selector>
+      <OKLink id="mov2#opm10#seu14#oln56" name="OKFlow56" to="mov2#opm10#seu13" gr:bendpoints="123,4,-157,29">
+        <LinkParameter id="mov2#opm10#seu14#oln56#par167" name="oid_SameTask [oid]" source="ent5#att13Array" target="mov2#opm10#seu13#su38#rcond18.ent5#att13"/>
+        <LinkParameter id="mov2#opm10#seu14#oln56#par168" name="Worker_id_PASSING_SameWorker [oid]" sourceLinkParameter="mov2#opm10#icu10#oln55#par166" target="mov2#opm10#seu13#su38#rcond19.userOID"/>
+        <LinkParameter id="mov2#opm10#seu14#oln56#par169" name="Data Size_PASSING" source="dataSize" passing="true"/>
+      </OKLink>
+    </SelectorUnit>
+    <MathUnit id="mov2#opm10#mathu2" name="Difference" gr:x="630" gr:y="185" resultType="integer" defaultExpression="fo - so">
+      <MathVariable id="mov2#opm10#mathu2#mathv3" name="fo"/>
+      <MathVariable id="mov2#opm10#mathu2#mathv4" name="so"/>
+      <OKLink id="mov2#opm10#mathu2#oln58" name="OKFlow58" to="mov2#opm10#switch9">
+        <LinkParameter id="mov2#opm10#mathu2#oln58#par173" name="Result_Switch" source="result" target="mov2#opm10#switch9.switch"/>
+      </OKLink>
+    </MathUnit>
+    <KOCollectorUnit id="mov2#opm10#kocu8" name="Unanswered" gr:x="1000" gr:y="215">
+      <OutputCollectorParameter id="mov2#opm10#kocu8#ocp3" name="msg"/>
+    </KOCollectorUnit>
+    <OKCollectorUnit gr:x="1000" gr:y="115" id="mov2#opm10#okcu14" name="AllAnswered">
+      <OutputCollectorParameter id="mov2#opm10#okcu14#ocp4" name="diff"/>
+    </OKCollectorUnit>
+    <SwitchUnit gr:x="810" gr:y="195" id="mov2#opm10#switch9" name="IsZero">
+      <Case value="0"/>
+      <OKLink id="mov2#opm10#switch9#oln59" name="OKFlow59" to="mov2#opm10#okcu14" code="0">
+        <LinkParameter id="mov2#opm10#switch9#oln59#par175" name="Switch_diff" source="switch" target="mov2#opm10#okcu14#ocp4"/>
+      </OKLink>
+      <OKLink id="mov2#opm10#switch9#oln60" name="OKFlow60" to="mov2#opm10#kocu8">
+        <LinkParameter id="mov2#opm10#switch9#oln60#par174" name="Not all questions answered_msg" sourceValue="Not all questions answered" target="mov2#opm10#kocu8#ocp3"/>
+      </OKLink>
+    </SwitchUnit>
+  </OperationUnits>
+</OperationModule>
