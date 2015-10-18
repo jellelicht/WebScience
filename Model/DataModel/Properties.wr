@@ -118,8 +118,7 @@
     <Attribute id="ent8#att28" name="finished" type="boolean" db:column="finished"/>
     <Attribute id="ent8#att29" name="startTime" type="integer" db:column="starttime"/>
   </Entity>
-  <db:Database id="db1" name="LocalDB" type="MySQL" url="jdbc:mysql://localhost:3306/test4" username="root" cryptedPassword="true" password="YWFyZGJlaQ==">
-  </db:Database>
+  <db:Database id="db1" name="LocalDB" type="MySQL" url="jdbc:mysql://localhost:3306/test4" username="root" cryptedPassword="true" password="YWFyZGJlaQ=="/>
   <Relationship id="rel1" name="Worker_Task" sourceEntity="ent1" targetEntity="ent6" db:database="db1" db:table="worker_task">
     <RelationshipRole1 id="rel1#role1" name="WorkerToTask" maxCard="N">
       <db:JoinColumn attribute="userOID" name="worker_oid"/>

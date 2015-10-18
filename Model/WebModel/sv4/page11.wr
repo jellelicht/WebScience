@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="700" gr:y="280" id="sv4#page11" name="Requester Home Page" protected="false" landmark="true">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="970" gr:y="90" id="sv4#page11" name="Requester Home Page" protected="false" landmark="true">
   <ContentUnits>
     <PowerIndexUnit gr:x="0" gr:y="0" id="sv4#page11#pwu4" name="Campaigns" sortable="true" checkable="false" useCountQuery="false" entity="ent4" displayAttributes="ent4#att10 ent4#att11 ent4#att12" linkOrder="sv4#page11#pwu4#ln32 sv4#page11#pwu4#ln51">
       <Link id="sv4#page11#pwu4#ln32" name="Delete" to="sv4#dlu3" automaticCoupling="true" type="normal" validate="true"/>

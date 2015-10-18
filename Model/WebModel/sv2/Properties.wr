@@ -1,9 +1,9 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Home Page" landmarks="sv2#page5 sv2#page10 sv2#page6" homePage="sv2#page6">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="Home Page" landmarks="sv2#page6" homePage="sv2#page6">
   <OperationUnits>
-    <LoginUnit gr:x="465" gr:y="60" id="sv2#lgu4" name="Login"/>
     <ModuleInstanceUnit id="sv2#miu3" gr:x="850" gr:y="340" action="true" moduleId="mov2#opm4">
       <OKLink id="sv2#miu3#oln13" name="OKFlow30" to="sv2#page7" automaticCoupling="true" gr:bendpoints="192,-183,207,162"/>
       <OKLink id="sv2#miu3#oln14" name="OKFlow31" to="sv2#page6" automaticCoupling="true"/>
+      <KOLink id="sv2#miu3#kln8" name="KOFlow8" to="sv2#page7" automaticCoupling="true"/>
     </ModuleInstanceUnit>
     <LoginUnit id="sv2#lgu5" name="Login" landmark="false" gr:x="1160" gr:y="415"/>
     <DeleteUnit id="sv2#dlu4" name="Delete User" gr:x="855" gr:y="530" entity="User">
