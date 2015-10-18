@@ -1,0 +1,63 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="580" gr:y="130" id="mov2#opm4" name="CreateAcc">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm4#icu4" gr:x="30" gr:y="60" linkOrder="mov2#opm4#icu4#ln35 mov2#opm4#icu4#ln36">
+      <InputCollectorParameter id="mov2#opm4#icu4#icp11" name="userName"/>
+      <InputCollectorParameter id="mov2#opm4#icu4#icp12" name="password"/>
+      <InputCollectorParameter id="mov2#opm4#icu4#icp13" name="email"/>
+      <InputCollectorParameter id="mov2#opm4#icu4#icp14" name="name"/>
+      <InputCollectorParameter id="mov2#opm4#icu4#icp15" name="birthDate"/>
+      <OKLink id="mov2#opm4#icu4#oln23" name="Flow31" to="mov2#opm4#seu4" automaticCoupling="true"/>
+      <Link id="mov2#opm4#icu4#ln34" name="Flow34" to="mov2#opm4#switch3" type="transport" validate="true">
+        <LinkParameter id="mov2#opm4#icu4#ln34#par62" name="groupId_Switch" source="mov2#opm4#icu4#icp16" target="mov2#opm4#switch3.switch"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm4#icu4#icp16" name="groupId"/>
+      <Link id="mov2#opm4#icu4#ln35" name="Flow35" to="mov2#opm4#cru2" type="transport" validate="true">
+        <LinkParameter id="mov2#opm4#icu4#ln35#par63" name="birthDate_birthdate" source="mov2#opm4#icu4#icp15" target="mov2#opm4#cru2.User#att31"/>
+        <LinkParameter id="mov2#opm4#icu4#ln35#par64" name="email_email" source="mov2#opm4#icu4#icp13" target="mov2#opm4#cru2.email"/>
+        <LinkParameter id="mov2#opm4#icu4#ln35#par65" name="groupId_Group.oid(defaultGroup)" target="mov2#opm4#cru2.User2DefaultGroup.groupOID" sourceValue="1"/>
+        <LinkParameter id="mov2#opm4#icu4#ln35#par66" name="name_name" source="mov2#opm4#icu4#icp14" target="mov2#opm4#cru2.User#att30"/>
+        <LinkParameter id="mov2#opm4#icu4#ln35#par67" name="password_password" source="mov2#opm4#icu4#icp12" target="mov2#opm4#cru2.password"/>
+        <LinkParameter id="mov2#opm4#icu4#ln35#par68" name="userName_userName" source="mov2#opm4#icu4#icp11" target="mov2#opm4#cru2.userName"/>
+      </Link>
+      <Link id="mov2#opm4#icu4#ln36" name="Flow36" to="mov2#opm4#cru6" type="transport" validate="true">
+        <LinkParameter id="mov2#opm4#icu4#ln36#par69" name="birthDate_birthdate" source="mov2#opm4#icu4#icp15" target="mov2#opm4#cru6.User#att31"/>
+        <LinkParameter id="mov2#opm4#icu4#ln36#par70" name="email_email" source="mov2#opm4#icu4#icp13" target="mov2#opm4#cru6.email"/>
+        <LinkParameter id="mov2#opm4#icu4#ln36#par71" name="2_Group.oid(defaultGroup)" sourceValue="2" target="mov2#opm4#cru6.User2DefaultGroup.groupOID"/>
+        <LinkParameter id="mov2#opm4#icu4#ln36#par72" name="name_name" source="mov2#opm4#icu4#icp14" target="mov2#opm4#cru6.User#att30"/>
+        <LinkParameter id="mov2#opm4#icu4#ln36#par73" name="password_password" source="mov2#opm4#icu4#icp12" target="mov2#opm4#cru6.password"/>
+        <LinkParameter id="mov2#opm4#icu4#ln36#par74" name="userName_userName" source="mov2#opm4#icu4#icp11" target="mov2#opm4#cru6.userName"/>
+        <LinkParameter id="mov2#opm4#icu4#ln36#par75" name="1000_wallet" sourceValue="1000" target="mov2#opm4#cru6.User#att16"/>
+      </Link>
+    </InputCollectorUnit>
+    <CreateUnit id="mov2#opm4#cru2" name="Create Worker" gr:x="480" gr:y="75" entity="ent1">
+      <KOLink id="mov2#opm4#cru2#kln3" name="KOFlow6" to="mov2#opm4#kocu3" automaticCoupling="true" gr:bendpoints="180,-73,-335,2"/>
+      <OKLink id="mov2#opm4#cru2#oln16" name="OKFlow35" to="mov2#opm4#okcu4" automaticCoupling="true" gr:bendpoints="224,114,-291,-411"/>
+    </CreateUnit>
+    <CreateUnit id="mov2#opm4#cru6" name="Create Requester" gr:x="685" gr:y="75" entity="ent2">
+      <OKLink id="mov2#opm4#cru6#oln17" name="OKFlow1" to="mov2#opm4#okcu4"/>
+      <KOLink id="mov2#opm4#cru6#kln4" name="KOFlow3" to="mov2#opm4#kocu3"/>
+    </CreateUnit>
+    <OKCollectorUnit id="mov2#opm4#okcu4" name="Success" gr:x="945" gr:y="600"/>
+    <SwitchUnit id="mov2#opm4#switch2" name="IsDuplicate" gr:x="605" gr:y="365">
+      <Case value="0"/>
+      <OKLink id="mov2#opm4#switch2#oln18" name="OKFlow4" to="mov2#opm4#switch3" code="0"/>
+      <OKLink id="mov2#opm4#switch2#oln19" name="OKFlow5" to="mov2#opm4#okcu5"/>
+    </SwitchUnit>
+    <SelectorUnit id="mov2#opm4#seu4" name="IsUsernameTaken" gr:x="345" gr:y="355" entity="User" distinctAttributes="userName">
+      <Selector id="mov2#opm4#seu4#su11" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="mov2#opm4#seu4#su11#acond2" name="SameUsername" predicate="eq" booleanOperator="or" implied="false" attributes="userName"/>
+      </Selector>
+      <OKLink id="mov2#opm4#seu4#oln20" name="OKFlow3" to="mov2#opm4#switch2">
+        <LinkParameter id="mov2#opm4#seu4#oln20#par61" name="Data Size_Switch" source="dataSize" target="mov2#opm4#switch2.switch"/>
+      </OKLink>
+    </SelectorUnit>
+    <SwitchUnit id="mov2#opm4#switch3" name="isWorker" gr:x="615" gr:y="250">
+      <Case value="1"/>
+      <Case value="2"/>
+      <OKLink id="mov2#opm4#switch3#oln21" name="OKFlow33" to="mov2#opm4#cru6" code="2" automaticCoupling="true"/>
+      <OKLink id="mov2#opm4#switch3#oln22" name="OKFlow34" to="mov2#opm4#cru2" code="1" automaticCoupling="true"/>
+    </SwitchUnit>
+    <KOCollectorUnit id="mov2#opm4#kocu3" name="DB Error" gr:x="945" gr:y="0"/>
+    <OKCollectorUnit id="mov2#opm4#okcu5" name="Duplicate" gr:x="945" gr:y="300"/>
+  </OperationUnits>
+</OperationModule>

@@ -14,13 +14,13 @@
       </Selector>
     </MultiDataUnit>
     <EntryUnit gr:x="70" gr:y="135" id="sv1#page2#enu3" name="Form3" entity="ent1">
-      <Field id="sv1#page2#enu3#fld15" name="rewards" type="integer" modifiable="true" attribute="ent1#att2"/>
-      <Field id="sv1#page2#enu3#fld16" name="name" type="string" modifiable="true" attribute="ent1#att3"/>
-      <Field id="sv1#page2#enu3#fld17" name="birthdate" type="date" modifiable="true" attribute="ent1#att4"/>
-      <Field id="sv1#page2#enu3#fld18" name="accuracy" type="string" modifiable="true" attribute="ent1#att8"/>
-      <MultiSelectionField id="sv1#page2#enu3#msfld1" name="WorkerToAnswer" type="string" role="rel9#role17"/>
+      <Field id="sv1#page2#enu3#fld15" name="rewards" type="integer" modifiable="true"/>
+      <Field id="sv1#page2#enu3#fld16" name="name" type="string" modifiable="true"/>
+      <Field id="sv1#page2#enu3#fld17" name="birthdate" type="date" modifiable="true"/>
+      <Field id="sv1#page2#enu3#fld18" name="accuracy" type="string" modifiable="true"/>
+      <MultiSelectionField id="sv1#page2#enu3#msfld1" name="WorkerToAnswer" type="string"/>
       <MultiSelectionField id="sv1#page2#enu3#msfld2" name="WorkerToSkill" type="string" role="rel4#role7"/>
-      <MultiSelectionField id="sv1#page2#enu3#msfld3" name="WorkerToUser" type="string" role="rel2#role3"/>
+      <MultiSelectionField id="sv1#page2#enu3#msfld3" name="WorkerToUser" type="string"/>
     </EntryUnit>
   </ContentUnits>
   <layout:Grid containerType="grid">
