@@ -113,11 +113,6 @@
     <Attribute id="ent7#att25" name="value" type="string" db:column="value"/>
     <Attribute id="ent7#att26" name="evaluation" type="string" db:column="evaluation"/>
   </Entity>
-  <Entity gr:x="90" gr:y="580" id="ent8" name="CompletedTask" duration="persistent" attributeOrder="ent8#att27 ent8#att28 ent8#att29" db:database="db1" db:table="completedtask">
-    <Attribute id="ent8#att27" key="true" name="oid" type="integer" db:column="oid"/>
-    <Attribute id="ent8#att28" name="finished" type="boolean" db:column="finished"/>
-    <Attribute id="ent8#att29" name="startTime" type="integer" db:column="starttime"/>
-  </Entity>
   <db:Database id="db1" name="LocalDB" type="MySQL" url="jdbc:mysql://localhost:3306/test4" username="root" cryptedPassword="true" password="YWFyZGJlaQ=="/>
   <Relationship id="rel1" name="Worker_Task" sourceEntity="ent1" targetEntity="ent6" db:database="db1" db:table="worker_task">
     <RelationshipRole1 id="rel1#role1" name="WorkerToTask" maxCard="N">

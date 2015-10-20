@@ -3,14 +3,13 @@
     <GetUnit gr:x="0" gr:y="0" id="sv3#page9#gtu5" name="UserParam" contextParameters="UserCtxParam">
       <Link id="sv3#page9#gtu5#ln12" name="Flow12" to="sv3#page9#dau3" automaticCoupling="true" type="transport" validate="true"/>
     </GetUnit>
-    <DataUnit gr:x="0" gr:y="180" id="sv3#page9#dau3" name="UserDetails" entity="User" displayAttributes="userName email User#att16 User#att30 User#att31" linkOrder="sv3#page9#dau3#ln5">
+    <DataUnit gr:x="0" gr:y="180" id="sv3#page9#dau3" name="UserDetails" entity="User" displayAttributes="userName email User#att16 User#att30 User#att31">
       <Selector id="sv3#page9#dau3#su5" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv3#page9#dau3#su5#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
       </Selector>
       <Link id="sv3#page9#dau3#ln21" name="Flow21" to="sv3#page9#inu1" type="transport" validate="true">
         <LinkParameter id="sv3#page9#dau3#ln21#par32" name="oid_RoleCondition2 [oid]" source="data.userOID" target="sv3#page9#inu1#su6#rcond2.userOID"/>
       </Link>
-      <Link id="sv3#page9#dau3#ln5" name="Logout" to="sv3#lou1" automaticCoupling="true" type="normal" validate="true"/>
       <Link id="sv3#page9#dau3#ln46" name="Flow46" to="sv3#page9#pwu6" type="transport" validate="true">
         <LinkParameter id="sv3#page9#dau3#ln46#par260" name="oid_RoleCondition22 [oid]" source="data.userOID" target="sv3#page9#pwu6#su59#rcond22.userOID"/>
       </Link>
@@ -26,7 +25,7 @@
         <LinkParameter id="sv3#page9#inu1#ln13#par31" name="oid_KeyCondition5 [oid]" source="data[].ent6#att18" target="sv3#page12#dau4#su7#kcond5.ent6#att18"/>
       </Link>
     </IndexUnit>
-    <PowerIndexUnit gr:x="190" gr:y="190" id="sv3#page9#pwu6" name="Associated List" sortable="true" checkable="false" useCountQuery="false" entity="ent3">
+    <PowerIndexUnit gr:x="190" gr:y="190" id="sv3#page9#pwu6" name="Associated List" sortable="true" checkable="false" useCountQuery="false" entity="ent3" displayAttributes="ent3#att7">
       <Selector id="sv3#page9#pwu6#su59" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page9#pwu6#su59#rcond22" name="RoleCondition22" predicate="in" implied="false" role="rel4#role7"/>
       </Selector>
@@ -50,7 +49,6 @@
     <layout:Row>
       <layout:Cell colspan="12">
         <layout:Unit unitId="sv3#page9#dau3">
-          <layout:Link link="sv3#page9#dau3#ln5"/>
           <layout:Attribute attribute="userName"/>
           <layout:Attribute attribute="email"/>
           <layout:Attribute attribute="User#att16"/>
@@ -94,7 +92,9 @@
     </layout:Row>
     <layout:Row>
       <layout:Cell colspan="12">
-        <layout:Unit unitId="sv3#page9#pwu6"/>
+        <layout:Unit unitId="sv3#page9#pwu6">
+          <layout:Attribute attribute="ent3#att7"/>
+        </layout:Unit>
       </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>

@@ -21,17 +21,9 @@
         <LinkParameter id="sv3#page1#dau9#ln40#par36" name="oid_item_id" source="data.ent5#att13" target="sv3#page1#enu1#fld6_slot"/>
       </Link>
     </DataUnit>
-    <DataUnit gr:x="175" gr:y="120" id="sv3#page1#dau12" name="temp worker overview" entity="ent1" displayAttributes="userOID userName User#att16">
-      <Selector id="sv3#page1#dau12#su52" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv3#page1#dau12#su52#kcond35" name="KeyCondition35" predicate="in" implied="false"/>
-      </Selector>
-    </DataUnit>
     <GetUnit gr:x="0" gr:y="115" id="sv3#page1#gtu1" name="WorkerIs" contextParameters="UserCtxParam">
       <Link id="sv3#page1#gtu1#ln87" name="Flow87" to="sv3#page1#enu1" type="transport" validate="true">
         <LinkParameter id="sv3#page1#gtu1#ln87#par232" name="UserCtxParam.oid_worker_id" source="sv3#page1#gtu1.UserCtxParam" target="sv3#page1#enu1#fld8_slot"/>
-      </Link>
-      <Link id="sv3#page1#gtu1#ln88" name="Flow88" to="sv3#page1#dau12" type="transport" validate="true">
-        <LinkParameter id="sv3#page1#gtu1#ln88#par233" name="UserCtxParam.oid_KeyCondition35 [oid]" source="sv3#page1#gtu1.UserCtxParam" target="sv3#page1#dau12#su52#kcond35.userOID"/>
       </Link>
     </GetUnit>
   </ContentUnits>
@@ -78,13 +70,7 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv3#page1#dau12">
-          <layout:Attribute attribute="userOID"/>
-          <layout:Attribute attribute="userName"/>
-          <layout:Attribute attribute="User#att16"/>
-        </layout:Unit>
-      </layout:Cell>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
