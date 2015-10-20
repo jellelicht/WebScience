@@ -1,4 +1,4 @@
-<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="395" gr:y="50" id="sv3#page12" name="ExecuteTask">
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="610" gr:y="30" id="sv3#page12" name="ExecuteTask">
   <ContentUnits>
     <DataUnit gr:x="0" gr:y="0" id="sv3#page12#dau4" name="Task" entity="ent6" displayAttributes="ent6#att19 ent6#att20 ent6#att21 ent6#att22 ent6#att23">
       <Selector id="sv3#page12#dau4#su7" defaultPolicy="fill" booleanOperator="and">
@@ -9,7 +9,7 @@
         <LinkParameter id="sv3#page12#dau4#ln14#par8" name="oid_PASSING" source="data.ent6#att18" passing="true"/>
       </Link>
     </DataUnit>
-    <IndexUnit gr:x="165" gr:y="170" id="sv3#page12#inu2" name="ItemsList" entity="ent5" displayAttributes="ent5#att14 ent5#att15 ent5#att17" linkOrder="sv3#page12#inu2#ln9 sv3#page12#inu2#ln41">
+    <IndexUnit gr:x="200" gr:y="155" id="sv3#page12#inu2" name="ItemsList" entity="ent5" displayAttributes="ent5#att14 ent5#att15 ent5#att17" linkOrder="sv3#page12#inu2#ln9 sv3#page12#inu2#ln41">
       <Selector id="sv3#page12#inu2#su8" defaultPolicy="fill" booleanOperator="and">
         <RelationshipRoleCondition id="sv3#page12#inu2#su8#rcond3" name="RoleCondition3" predicate="in" implied="false" role="rel7#role14"/>
       </Selector>

@@ -1,10 +1,19 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv3" name="Worker Home" protected="true" homePage="sv3#page9" landmarks="sv3#page9 sv3#lou1">
   <OperationUnits>
     <LogoutUnit gr:x="60" gr:y="435" id="sv3#lou1" name="LogoutWorker" siteView="sv2" landmark="true"/>
-    <ModuleInstanceUnit gr:x="705" gr:y="60" id="sv3#miu4" action="true" moduleId="mov2#opm8">
+    <ModuleInstanceUnit gr:x="1030" gr:y="0" id="sv3#miu4" action="true" moduleId="mov2#opm8">
       <OKLink id="sv3#miu4#oln34" name="OKFlow34" to="sv3#page12#dau4">
         <LinkParameter id="sv3#miu4#oln34#par46" name="oid_PASSING_KeyCondition5 [oid]" sourceLinkParameter="sv3#page1#enu1#ln1#par42" target="sv3#page12#dau4#su7#kcond5.ent6#att18"/>
       </OKLink>
     </ModuleInstanceUnit>
+    <ConnectUnit gr:x="430" gr:y="475" id="sv3#cnu1" name="AddSkill" relationship="rel4#role7">
+      <SourceSelector id="sv3#cnu1#su60" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#cnu1#su60#kcond41" name="KeyCondition41" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv3#cnu1#su61" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv3#cnu1#su61#kcond42" name="KeyCondition42" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv3#cnu1#oln89" name="OKFlow89" to="sv3#page9" automaticCoupling="true"/>
+    </ConnectUnit>
   </OperationUnits>
 </SiteView>
