@@ -123,6 +123,8 @@
           <layout:Link link="sv4#page14#pwu5Block"/>
           <layout:Link link="sv4#page14#pwu5Next"/>
           <layout:Link link="sv4#page14#pwu5Last"/>
+          <layout:LayoutParameter name="image-width" value="200" type="attribute"/>
+          <layout:LayoutParameter name="image-height" value="200" type="attribute"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

@@ -61,6 +61,8 @@
           <layout:Attribute attribute="ent5#att14"/>
           <layout:Attribute attribute="ent5#att15"/>
           <layout:Attribute attribute="ent5#att17"/>
+          <layout:LayoutParameter name="image-width" value="400" type="attribute"/>
+          <layout:LayoutParameter name="image-height" value="400" type="attribute"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

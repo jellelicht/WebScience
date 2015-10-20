@@ -6,11 +6,5 @@
       <KOLink id="sv2#miu3#kln8" name="KOFlow8" to="sv2#page7" automaticCoupling="true"/>
     </ModuleInstanceUnit>
     <LoginUnit id="sv2#lgu5" name="Login" landmark="false" gr:x="1160" gr:y="415"/>
-    <DeleteUnit id="sv2#dlu4" name="Delete User" gr:x="855" gr:y="530" entity="User">
-      <Selector id="sv2#dlu4#su4" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv2#dlu4#su4#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
-      </Selector>
-      <OKLink id="sv2#dlu4#oln15" name="OKFlow6" to="sv2#page6" automaticCoupling="true"/>
-    </DeleteUnit>
   </OperationUnits>
 </SiteView>

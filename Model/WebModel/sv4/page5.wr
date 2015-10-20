@@ -76,6 +76,8 @@
           <layout:Attribute attribute="rel5#role9.ent5#att14"/>
           <layout:Attribute attribute="rel5#role9.ent5#att15"/>
           <layout:Attribute attribute="rel5#role9.ent5#att17"/>
+          <layout:LayoutParameter name="image-width" value="200" type="attribute"/>
+          <layout:LayoutParameter name="image-height" value="200" type="attribute"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

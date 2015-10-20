@@ -1,8 +1,5 @@
 <Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv2#page6" name="Home Page" gr:x="425" gr:y="210" landmark="true">
   <ContentUnits>
-    <IndexUnit id="sv2#page6#inu3" name="Requester in System" linkOrder="sv2#page6#inu3#ln7" gr:x="150" gr:y="250" entity="ent2" displayAttributes="userName email User#att16 User#att30 User#att31">
-      <Link id="sv2#page6#inu3#ln7" name="Delete Requester" to="sv2#dlu4" type="normal" automaticCoupling="true" validate="true"/>
-    </IndexUnit>
     <EntryUnit id="sv2#page6#enu4" name="Login" linkOrder="sv2#page6#enu4#ln23" gr:x="175" gr:y="170">
       <Field id="sv2#page6#enu4#fld12" name="Username" type="string" modifiable="true"/>
       <Field id="sv2#page6#enu4#fld20" name="Password" type="password" modifiable="true"/>
@@ -11,9 +8,6 @@
         <LinkParameter id="sv2#page6#enu4#ln23#par30" name="Password_Password" source="sv2#page6#enu4#fld20" target="sv2#lgu5.password"/>
       </Link>
     </EntryUnit>
-    <IndexUnit id="sv2#page6#inu4" name="Workers in System" linkOrder="sv2#page6#inu4#ln24" gr:x="0" gr:y="250" entity="ent1" displayAttributes="userOID userName email User#att16 User#att30 User#att31">
-      <Link id="sv2#page6#inu4#ln24" name="Delete Worker" to="sv2#dlu4" type="normal" automaticCoupling="true" validate="true"/>
-    </IndexUnit>
     <EntryUnit id="sv2#page6#enu5" name="Register" linkOrder="sv2#page6#enu5#ln26" gr:x="25" gr:y="0" fieldOrder="sv2#page6#enu5#fld23 sv2#page6#enu5#fld24 sv2#page6#enu5#fld26 sv2#page6#enu5#fld32 sv2#page6#enu5#fld30 sv2#page6#enu5#sfld1">
       <Field id="sv2#page6#enu5#fld23" name="Name" type="string" modifiable="true" preloaded="true"/>
       <Field id="sv2#page6#enu5#fld24" name="UserName" type="string" modifiable="true"/>
@@ -57,16 +51,7 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page6#inu3">
-          <layout:Link link="sv2#page6#inu3#ln7"/>
-          <layout:Attribute attribute="userName"/>
-          <layout:Attribute attribute="email"/>
-          <layout:Attribute attribute="User#att16"/>
-          <layout:Attribute attribute="User#att30"/>
-          <layout:Attribute attribute="User#att31"/>
-        </layout:Unit>
-      </layout:Cell>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
@@ -100,17 +85,7 @@
       <layout:Cell/>
     </layout:Row>
     <layout:Row>
-      <layout:Cell colspan="12">
-        <layout:Unit unitId="sv2#page6#inu4">
-          <layout:Link link="sv2#page6#inu4#ln24"/>
-          <layout:Attribute attribute="userOID"/>
-          <layout:Attribute attribute="userName"/>
-          <layout:Attribute attribute="email"/>
-          <layout:Attribute attribute="User#att16"/>
-          <layout:Attribute attribute="User#att30"/>
-          <layout:Attribute attribute="User#att31"/>
-        </layout:Unit>
-      </layout:Cell>
+      <layout:Cell colspan="12"/>
       <layout:Cell/>
       <layout:Cell/>
       <layout:Cell/>
