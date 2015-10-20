@@ -18,6 +18,7 @@
         <LinkParameter id="mov2#opm4#icu4#ln35#par66" name="name_name" source="mov2#opm4#icu4#icp14" target="mov2#opm4#cru2.User#att30"/>
         <LinkParameter id="mov2#opm4#icu4#ln35#par67" name="password_password" source="mov2#opm4#icu4#icp12" target="mov2#opm4#cru2.password"/>
         <LinkParameter id="mov2#opm4#icu4#ln35#par68" name="userName_userName" source="mov2#opm4#icu4#icp11" target="mov2#opm4#cru2.userName"/>
+        <LinkParameter id="mov2#opm4#icu4#ln35#par5" name="0_wallet" sourceValue="0" target="mov2#opm4#cru2.User#att16"/>
       </Link>
       <Link id="mov2#opm4#icu4#ln36" name="Flow36" to="mov2#opm4#cru6" type="transport" validate="true">
         <LinkParameter id="mov2#opm4#icu4#ln36#par69" name="birthDate_birthdate" source="mov2#opm4#icu4#icp15" target="mov2#opm4#cru6.User#att31"/>

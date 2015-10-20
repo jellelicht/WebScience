@@ -8,11 +8,11 @@
     <Attribute id="User#att30" name="name" type="string" db:column="name"/>
     <Attribute id="User#att31" name="birthdate" type="date" db:column="birthdate"/>
   </Entity>
-  <Entity id="Group" name="Group" duration="persistent" gr:x="250" gr:y="208" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
+  <Entity id="Group" name="Group" duration="persistent" gr:x="260" gr:y="210" gr:hideAttributes="false" attributeOrder="groupOID groupName" db:database="db1" db:table="group">
     <Attribute name="oid" id="groupOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="groupName" id="groupName" type="string" db:column="groupname"/>
   </Entity>
-  <Entity id="Module" name="Module" duration="persistent" gr:x="485" gr:y="175" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
+  <Entity id="Module" name="Module" duration="persistent" gr:x="570" gr:y="200" gr:hideAttributes="false" attributeOrder="moduleOID moduleID moduleName" db:database="db1" db:table="module">
     <Attribute name="oid" id="moduleOID" type="integer" key="true" db:column="oid"/>
     <Attribute name="moduleID" id="moduleID" type="string" db:column="moduleid"/>
     <Attribute name="moduleName" id="moduleName" type="string" db:column="modulename"/>
@@ -25,7 +25,7 @@
       <db:JoinColumn attribute="groupOID" name="group_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="0,0,0,0" db:database="db1" db:table="user">
+  <Relationship id="User2DefaultGroup_DefaultGroup2User" name="User_DefaultGroup" sourceEntity="User" targetEntity="Group" gr:bendpoints="214,-1,-141,-138" db:database="db1" db:table="user">
     <RelationshipRole1 id="User2DefaultGroup" name="defaultGroup" maxCard="1">
       <db:JoinColumn attribute="userOID" name="oid"/>
     </RelationshipRole1>
@@ -49,18 +49,18 @@
       <db:JoinColumn attribute="moduleOID" name="module_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="50" gr:y="385" id="ent1" name="Worker" duration="persistent" db:database="db1" db:table="worker" attributeOrder="ent1#att32">
+  <Entity gr:x="155" gr:y="420" id="ent1" name="Worker" duration="persistent" db:database="db1" db:table="worker" attributeOrder="ent1#att32">
     <Generalization superEntity="User">
       <db:JoinColumn attribute="userOID" name="user_oid"/>
     </Generalization>
     <Attribute id="ent1#att32" name="accuracy" type="integer" db:column="accuracy"/>
   </Entity>
-  <Entity gr:x="40" gr:y="65" id="ent2" name="Requester" duration="persistent" db:database="db1" db:table="requester">
-    <Generalization superEntity="User" gr:bendpoints="12,54,22,-124">
+  <Entity gr:x="25" gr:y="430" id="ent2" name="Requester" duration="persistent" db:database="db1" db:table="requester">
+    <Generalization superEntity="User">
       <db:JoinColumn attribute="userOID" name="user_oid"/>
     </Generalization>
   </Entity>
-  <Entity gr:x="605" gr:y="355" id="ent3" name="Skill" duration="persistent" attributeOrder="ent3#att6 ent3#att7" db:database="db1" db:table="skill">
+  <Entity gr:x="385" gr:y="410" id="ent3" name="Skill" duration="persistent" attributeOrder="ent3#att6 ent3#att7" db:database="db1" db:table="skill">
     <Attribute id="ent3#att6" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent3#att7" name="name" type="string" db:column="name"/>
   </Entity>
@@ -72,19 +72,19 @@
       <db:JoinColumn attribute="ent3#att6" name="skill_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="265" gr:y="25" id="ent4" name="Campaign" duration="persistent" attributeOrder="ent4#att9 ent4#att10 ent4#att11 ent4#att12" db:database="db1" db:table="campaign">
+  <Entity gr:x="5" gr:y="585" id="ent4" name="Campaign" duration="persistent" attributeOrder="ent4#att9 ent4#att10 ent4#att11 ent4#att12" db:database="db1" db:table="campaign">
     <Attribute id="ent4#att9" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent4#att10" name="name" type="string" db:column="name"/>
     <Attribute id="ent4#att11" name="budget" type="integer" db:column="budget"/>
     <Attribute id="ent4#att12" name="status" type="boolean" db:column="status"/>
   </Entity>
-  <Entity gr:x="900" gr:y="525" id="ent5" name="Item" duration="persistent" attributeOrder="ent5#att13 ent5#att14 ent5#att15 ent5#att17" db:database="db1" db:table="item">
+  <Entity gr:x="720" gr:y="425" id="ent5" name="Item" duration="persistent" attributeOrder="ent5#att13 ent5#att14 ent5#att15 ent5#att17" db:database="db1" db:table="item">
     <Attribute id="ent5#att13" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent5#att14" name="title" type="string" db:column="title"/>
     <Attribute id="ent5#att15" name="caption" type="string" db:column="caption"/>
     <Attribute id="ent5#att17" name="url" type="blob" db:column="url" contentType="image"/>
   </Entity>
-  <Entity gr:x="835" gr:y="115" id="ent6" name="Task" duration="persistent" attributeOrder="ent6#att18 ent6#att19 ent6#att20 ent6#att21 ent6#att22 ent6#att23" db:database="db1" db:table="task">
+  <Entity gr:x="315" gr:y="565" id="ent6" name="Task" duration="persistent" attributeOrder="ent6#att18 ent6#att19 ent6#att20 ent6#att21 ent6#att22 ent6#att23" db:database="db1" db:table="task">
     <Attribute id="ent6#att18" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent6#att19" name="title" type="string" db:column="title"/>
     <Attribute id="ent6#att20" name="description" type="string" db:column="description"/>
@@ -108,7 +108,7 @@
       <db:JoinColumn attribute="ent6#att18" name="task_oid"/>
     </RelationshipRole2>
   </Relationship>
-  <Entity gr:x="555" gr:y="535" id="ent7" name="Answer" duration="persistent" attributeOrder="ent7#att24 ent7#att25 ent7#att26" db:database="db1" db:table="answer">
+  <Entity gr:x="360" gr:y="295" id="ent7" name="Answer" duration="persistent" attributeOrder="ent7#att24 ent7#att25 ent7#att26" db:database="db1" db:table="answer">
     <Attribute id="ent7#att24" key="true" name="oid" type="integer" db:column="oid"/>
     <Attribute id="ent7#att25" name="value" type="string" db:column="value"/>
     <Attribute id="ent7#att26" name="evaluation" type="string" db:column="evaluation"/>
