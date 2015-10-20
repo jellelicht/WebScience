@@ -1,0 +1,85 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" gr:x="790" gr:y="290" id="mov2#opm2" name="CreateCampaign">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm2#icu2" gr:x="30" gr:y="60" linkOrder="mov2#opm2#icu2#ln37 mov2#opm2#icu2#ln38">
+      <Link id="mov2#opm2#icu2#ln17" name="Flow17" to="mov2#opm2#cru5" type="transport" validate="true">
+        <LinkParameter id="mov2#opm2#icu2#ln17#par106" name="Requester.oid(CampaignToRequester)" source="mov2#opm2#icu2#icp1" target="mov2#opm2#cru5.rel13#role25.userOID"/>
+        <LinkParameter id="mov2#opm2#icu2#ln17#par111" name="budget" source="mov2#opm2#icu2#icp2" target="mov2#opm2#cru5.ent4#att11"/>
+        <LinkParameter id="mov2#opm2#icu2#ln17#par112" name="name" source="mov2#opm2#icu2#icp3" target="mov2#opm2#cru5.ent4#att10"/>
+        <LinkParameter id="mov2#opm2#icu2#ln17#par148" name="online_status" sourceValue="online" target="mov2#opm2#cru5.ent4#att12"/>
+      </Link>
+      <InputCollectorParameter id="mov2#opm2#icu2#icp1" name="Requester.oid(CampaignToRequester)"/>
+      <InputCollectorParameter id="mov2#opm2#icu2#icp2" name="budget"/>
+      <InputCollectorParameter id="mov2#opm2#icu2#icp3" name="name"/>
+      <OKLink id="mov2#opm2#icu2#oln38" name="OKFlow38" to="mov2#opm2#seu11" gr:bendpoints="222,39,-103,4">
+        <LinkParameter id="mov2#opm2#icu2#oln38#par120" name="Requester.oid(CampaignToRequester)_KeyCondition31 [oid]" source="mov2#opm2#icu2#icp1" target="mov2#opm2#seu11#su53#kcond31.userOID"/>
+      </OKLink>
+      <Link id="mov2#opm2#icu2#ln37" name="Flow37" to="mov2#opm2#mathu8" type="transport" validate="true">
+        <LinkParameter id="mov2#opm2#icu2#ln37#par119" name="budget_cost" source="mov2#opm2#icu2#icp2" target="mov2#opm2#mathu8#mathv14"/>
+      </Link>
+      <Link id="mov2#opm2#icu2#ln38" name="Flow38" to="mov2#opm2#mfu7" type="transport" validate="true">
+        <LinkParameter id="mov2#opm2#icu2#ln38#par153" name="Requester.oid(CampaignToRequester)_KeyCondition36 [oid]" source="mov2#opm2#icu2#icp1" target="mov2#opm2#mfu7#su54#kcond36.userOID"/>
+      </Link>
+    </InputCollectorUnit>
+    <CreateUnit gr:x="430" gr:y="510" id="mov2#opm2#cru5" name="Create Campaign" entity="ent4">
+      <KOLink id="mov2#opm2#cru5#kln9" name="KOFlow9" to="mov2#opm2#kocu1">
+        <LinkParameter id="mov2#opm2#cru5#kln9#par160" name="create campaign error_msg" sourceValue="create campaign error" target="mov2#opm2#kocu1#ocp2"/>
+      </KOLink>
+      <OKLink id="mov2#opm2#cru5#oln74" name="OKFlow74" to="mov2#opm2#okcu1" automaticCoupling="true"/>
+    </CreateUnit>
+    <SelectorUnit gr:x="530" gr:y="15" id="mov2#opm2#seu11" name="CheckRequester" entity="ent2">
+      <Selector id="mov2#opm2#seu11#su53" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm2#seu11#su53#kcond31" name="KeyCondition31" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm2#seu11#oln40" name="OKFlow40" to="mov2#opm2#mathu8">
+        <LinkParameter id="mov2#opm2#seu11#oln40#par140" name="wallet_funds" source="User#att16Array" target="mov2#opm2#mathu8#mathv13"/>
+      </OKLink>
+      <KOLink id="mov2#opm2#seu11#kln1" name="KOFlow1" to="mov2#opm2#kocu1">
+        <LinkParameter id="mov2#opm2#seu11#kln1#par163" name="requester does not exist_msg" sourceValue="requester does not exist" target="mov2#opm2#kocu1#ocp2"/>
+      </KOLink>
+    </SelectorUnit>
+    <MathUnit id="mov2#opm2#mathu8" name="NewFunds" gr:x="595" gr:y="150" resultType="float" defaultExpression="funds - cost">
+      <MathVariable id="mov2#opm2#mathu8#mathv13" name="funds"/>
+      <MathVariable id="mov2#opm2#mathu8#mathv14" name="cost"/>
+      <OKLink id="mov2#opm2#mathu8#oln43" name="OKFlow43" to="mov2#opm2#mathu9">
+        <LinkParameter id="mov2#opm2#mathu8#oln43#par144" name="Result_funds" source="result" target="mov2#opm2#mathu9#mathv15"/>
+        <LinkParameter id="mov2#opm2#mathu8#oln43#par149" name="Result_PASSING" source="result" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#opm2#mathu8#kln5" name="KOFlow5" to="mov2#opm2#kocu1">
+        <LinkParameter id="mov2#opm2#mathu8#kln5#par162" name="calc error_msg" sourceValue="calc error" target="mov2#opm2#kocu1#ocp2"/>
+      </KOLink>
+    </MathUnit>
+    <MathUnit id="mov2#opm2#mathu9" name="EnoughFunds" gr:x="575" gr:y="265" resultType="boolean" defaultExpression="funds &gt;= 0">
+      <MathVariable id="mov2#opm2#mathu9#mathv15" name="funds"/>
+      <OKLink id="mov2#opm2#mathu9#oln45" name="OKFlow45" to="mov2#opm2#switch6">
+        <LinkParameter id="mov2#opm2#mathu9#oln45#par147" name="Result_Switch" source="result" target="mov2#opm2#switch6.switch"/>
+        <LinkParameter id="mov2#opm2#mathu9#oln45#par150" name="Result_PASSING" sourceLinkParameter="mov2#opm2#mathu8#oln43#par149" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#opm2#mathu9#kln6" name="KOFlow6" to="mov2#opm2#kocu1">
+        <LinkParameter id="mov2#opm2#mathu9#kln6#par161" name="calc error_msg" sourceValue="calc error" target="mov2#opm2#kocu1#ocp2"/>
+      </KOLink>
+    </MathUnit>
+    <SwitchUnit id="mov2#opm2#switch6" name="EnoughFunds2" gr:x="605" gr:y="420">
+      <Case value="true"/>
+      <Case value="false"/>
+      <OKLink id="mov2#opm2#switch6#oln49" name="OKFlow49" to="mov2#opm2#mfu7" code="true">
+        <LinkParameter id="mov2#opm2#switch6#oln49#par152" name="Result_PASSING_wallet" sourceLinkParameter="mov2#opm2#mathu9#oln45#par150" target="mov2#opm2#mfu7.User#att16"/>
+      </OKLink>
+      <OKLink id="mov2#opm2#switch6#oln73" name="OKFlow73" to="mov2#opm2#kocu1" code="false">
+        <LinkParameter id="mov2#opm2#switch6#oln73#par157" name="not enough funds_msg" sourceValue="not enough funds" target="mov2#opm2#kocu1#ocp2"/>
+      </OKLink>
+    </SwitchUnit>
+    <ModifyUnit gr:x="470" gr:y="360" id="mov2#opm2#mfu7" name="SetFunds" entity="ent2">
+      <Selector id="mov2#opm2#mfu7#su54" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm2#mfu7#su54#kcond36" name="KeyCondition36" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm2#mfu7#oln57" name="OKFlow57" to="mov2#opm2#cru5" automaticCoupling="true"/>
+      <KOLink id="mov2#opm2#mfu7#kln7" name="KOFlow7" to="mov2#opm2#kocu1">
+        <LinkParameter id="mov2#opm2#mfu7#kln7#par159" name="set funds error_msg" sourceValue="set funds error" target="mov2#opm2#kocu1#ocp2"/>
+      </KOLink>
+    </ModifyUnit>
+    <OKCollectorUnit gr:x="955" gr:y="560" id="mov2#opm2#okcu1" name="OK Port1"/>
+    <KOCollectorUnit gr:x="955" gr:y="70" id="mov2#opm2#kocu1" name="KO Port1">
+      <OutputCollectorParameter id="mov2#opm2#kocu1#ocp2" name="msg"/>
+    </KOCollectorUnit>
+  </OperationUnits>
+</OperationModule>

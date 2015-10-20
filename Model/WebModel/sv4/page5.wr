@@ -25,7 +25,7 @@
         <LinkParameter id="sv4#page5#dau10#ln80#par178" name="oid_PASSING_KeyCondition29 [oid]" sourceLinkParameter="sv4#page14#pwu2#ln66#par103" target="sv4#page5#dau11#su45#kcond29.ent6#att18"/>
       </Link>
     </DataUnit>
-    <MultiDataUnit id="sv4#page5#mdu2" entity="ent7" displayAttributes="ent7#att24 ent7#att25 ent7#att26" gr:x="475" gr:y="0" name="List6">
+    <MultiDataUnit id="sv4#page5#mdu2" entity="ent7" displayAttributes="ent7#att24 ent7#att25 ent7#att26 rel5#role9.ent5#att14 rel5#role9.ent5#att15 rel5#role9.ent5#att17" gr:x="475" gr:y="0" name="Answers">
       <Selector id="sv4#page5#mdu2#su42" defaultPolicy="fill" booleanOperator="and">
         <KeyCondition id="sv4#page5#mdu2#su42#kcond26" predicate="in" implied="false" name="KeyCondition25"/>
       </Selector>
@@ -73,6 +73,9 @@
           <layout:Attribute attribute="ent7#att24"/>
           <layout:Attribute attribute="ent7#att25"/>
           <layout:Attribute attribute="ent7#att26"/>
+          <layout:Attribute attribute="rel5#role9.ent5#att14"/>
+          <layout:Attribute attribute="rel5#role9.ent5#att15"/>
+          <layout:Attribute attribute="rel5#role9.ent5#att17"/>
         </layout:Unit>
       </layout:Cell>
       <layout:Cell/>

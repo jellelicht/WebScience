@@ -1,0 +1,71 @@
+<OperationModule xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="mov2#opm3" name="DeleteCampaign" gr:x="785" gr:y="135">
+  <OperationUnits>
+    <InputCollectorUnit id="mov2#opm3#icu3" gr:x="30" gr:y="60">
+      <OKLink id="mov2#opm3#icu3#oln76" name="OKFlow38" to="mov2#opm3#seu15" gr:bendpoints="222,39,-103,4">
+        <LinkParameter id="mov2#opm3#icu3#oln76#par248" name="campaign_KeyCondition39 [oid]" source="mov2#opm3#icu3#icp7" target="mov2#opm3#seu15#su57#kcond39.ent4#att9"/>
+      </OKLink>
+      <InputCollectorParameter id="mov2#opm3#icu3#icp7" name="campaign"/>
+      <Link id="mov2#opm3#icu3#ln45" name="Flow45" to="mov2#opm3#dlu1" type="transport" validate="true">
+        <LinkParameter id="mov2#opm3#icu3#ln45#par255" name="campaign_KeyCondition40 [oid]" source="mov2#opm3#icu3#icp7" target="mov2#opm3#dlu1#su58#kcond40.ent4#att9"/>
+      </Link>
+    </InputCollectorUnit>
+    <SelectorUnit id="mov2#opm3#seu12" name="CheckRequester" gr:x="680" gr:y="20" entity="ent2">
+      <Selector id="mov2#opm3#seu12#su55" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm3#seu12#su55#kcond37" name="KeyCondition31" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm3#seu12#oln78" name="OKFlow40" to="mov2#opm3#mathu10">
+        <LinkParameter id="mov2#opm3#seu12#oln78#par237" name="wallet_funds" source="User#att16Array" target="mov2#opm3#mathu10#mathv16"/>
+        <LinkParameter id="mov2#opm3#seu12#oln78#par251" name="budget_PASSING_cost" sourceLinkParameter="mov2#opm3#seu15#oln84#par250" target="mov2#opm3#mathu10#mathv17"/>
+        <LinkParameter id="mov2#opm3#seu12#oln78#par252" name="oid_PASSING" source="userOIDArray" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#opm3#seu12#kln26" name="KOFlow1" to="mov2#opm3#kocu2">
+        <LinkParameter id="mov2#opm3#seu12#kln26#par238" name="requester does not exist_msg" target="mov2#opm3#kocu2#ocp6" sourceValue="requester does not exist"/>
+      </KOLink>
+    </SelectorUnit>
+    <MathUnit id="mov2#opm3#mathu10" name="NewFunds" gr:x="595" gr:y="150" resultType="float" defaultExpression="funds + cost">
+      <MathVariable id="mov2#opm3#mathu10#mathv16" name="funds"/>
+      <MathVariable id="mov2#opm3#mathu10#mathv17" name="cost"/>
+      <KOLink id="mov2#opm3#mathu10#kln27" name="KOFlow5" to="mov2#opm3#kocu2">
+        <LinkParameter id="mov2#opm3#mathu10#kln27#par241" name="calc error_msg" target="mov2#opm3#kocu2#ocp6" sourceValue="calc error"/>
+      </KOLink>
+      <OKLink id="mov2#opm3#mathu10#oln85" name="OKFlow85" to="mov2#opm3#mfu8">
+        <LinkParameter id="mov2#opm3#mathu10#oln85#par253" name="oid_PASSING_KeyCondition36 [oid]" sourceLinkParameter="mov2#opm3#seu12#oln78#par252" target="mov2#opm3#mfu8#su56#kcond38.userOID"/>
+        <LinkParameter id="mov2#opm3#mathu10#oln85#par254" name="Result_wallet" source="result" target="mov2#opm3#mfu8.User#att16"/>
+      </OKLink>
+    </MathUnit>
+    <ModifyUnit id="mov2#opm3#mfu8" name="SetFunds" gr:x="585" gr:y="290" entity="ent2">
+      <Selector id="mov2#opm3#mfu8#su56" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm3#mfu8#su56#kcond38" name="KeyCondition36" predicate="in" implied="false"/>
+      </Selector>
+      <KOLink id="mov2#opm3#mfu8#kln29" name="KOFlow7" to="mov2#opm3#kocu2">
+        <LinkParameter id="mov2#opm3#mfu8#kln29#par247" name="set funds error_msg" target="mov2#opm3#kocu2#ocp6" sourceValue="set funds error"/>
+      </KOLink>
+      <OKLink id="mov2#opm3#mfu8#oln86" name="OKFlow86" to="mov2#opm3#dlu1" automaticCoupling="true"/>
+    </ModifyUnit>
+    <OKCollectorUnit id="mov2#opm3#okcu2" name="OK Port1" gr:x="955" gr:y="560"/>
+    <KOCollectorUnit id="mov2#opm3#kocu2" name="KO Port1" gr:x="955" gr:y="70">
+      <OutputCollectorParameter id="mov2#opm3#kocu2#ocp6" name="msg"/>
+    </KOCollectorUnit>
+    <SelectorUnit gr:x="460" gr:y="45" id="mov2#opm3#seu15" name="CheckCampaign" entity="ent4">
+      <Selector id="mov2#opm3#seu15#su57" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm3#seu15#su57#kcond39" name="KeyCondition39" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm3#seu15#oln84" name="OKFlow84" to="mov2#opm3#seu12">
+        <LinkParameter id="mov2#opm3#seu15#oln84#par249" name="CampaignToRequester.oid_KeyCondition31 [oid]" source="rel13#role25_userOIDArray" target="mov2#opm3#seu12#su55#kcond37.userOID"/>
+        <LinkParameter id="mov2#opm3#seu15#oln84#par250" name="budget_PASSING" source="ent4#att11Array" passing="true"/>
+      </OKLink>
+      <KOLink id="mov2#opm3#seu15#kln31" name="KOFlow31" to="mov2#opm3#kocu2">
+        <LinkParameter id="mov2#opm3#seu15#kln31#par256" name="Campaign does not exist_msg" sourceValue="Campaign does not exist" target="mov2#opm3#kocu2#ocp6"/>
+      </KOLink>
+    </SelectorUnit>
+    <DeleteUnit gr:x="565" gr:y="440" id="mov2#opm3#dlu1" name="DeleteCampaign" entity="ent4">
+      <Selector id="mov2#opm3#dlu1#su58" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="mov2#opm3#dlu1#su58#kcond40" name="KeyCondition40" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="mov2#opm3#dlu1#oln87" name="OKFlow87" to="mov2#opm3#okcu2" automaticCoupling="true"/>
+      <KOLink id="mov2#opm3#dlu1#kln30" name="KOFlow30" to="mov2#opm3#kocu2">
+        <LinkParameter id="mov2#opm3#dlu1#kln30#par257" name="Could not delete campaign_msg" sourceValue="Could not delete campaign" target="mov2#opm3#kocu2#ocp6"/>
+      </KOLink>
+    </DeleteUnit>
+  </OperationUnits>
+</OperationModule>

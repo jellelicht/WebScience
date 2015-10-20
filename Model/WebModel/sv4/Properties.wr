@@ -1,12 +1,6 @@
 <SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv4" name="Requester Home" protected="true" homePage="sv4#page11" landmarks="sv4#lou2 sv4#page11">
   <OperationUnits>
     <LogoutUnit gr:x="1275" gr:y="810" id="sv4#lou2" name="Logout" siteView="sv2" landmark="true"/>
-    <DeleteUnit gr:x="935" gr:y="395" id="sv4#dlu3" name="DeleteCampaign" entity="ent4">
-      <Selector id="sv4#dlu3#su13" defaultPolicy="fill" booleanOperator="and">
-        <KeyCondition id="sv4#dlu3#su13#kcond11" name="KeyCondition11" predicate="in" implied="false"/>
-      </Selector>
-      <OKLink id="sv4#dlu3#oln6" name="OKFlow6" to="sv4#page11" automaticCoupling="true"/>
-    </DeleteUnit>
     <CreateUnit gr:x="750" gr:y="900" id="sv4#cru10" name="CreateTask" entity="ent6">
       <OKLink id="sv4#cru10#oln27" name="OKFlow27" to="sv4#page8" automaticCoupling="true"/>
     </CreateUnit>
@@ -60,7 +54,7 @@
       </TargetSelector>
       <OKLink id="sv4#dcnu3#oln5" name="OKFlow5" to="sv4#page14" automaticCoupling="true"/>
     </DisconnectUnit>
-    <CreateUnit gr:x="955" gr:y="820" id="sv4#cru12" name="Create Campaign" entity="ent4">
+    <CreateUnit gr:x="885" gr:y="810" id="sv4#cru12" name="Create Campaign" entity="ent4">
       <OKLink id="sv4#cru12#oln35" name="OKFlow35" to="sv4#page11" automaticCoupling="true"/>
     </CreateUnit>
     <ModuleInstanceUnit gr:x="700" gr:y="335" id="sv4#miu7" action="true" moduleId="mov2#opm10">
@@ -74,7 +68,7 @@
         <LinkParameter id="sv4#miu7#oln53#par217" name="worker_PASSING" sourceLinkParameter="sv4#page5#enu6#ln77#par215" passing="true"/>
       </OKLink>
     </ModuleInstanceUnit>
-    <ModuleInstanceUnit gr:x="985" gr:y="315" id="sv4#miu8" action="true" moduleId="mov2#opm11">
+    <ModuleInstanceUnit gr:x="1055" gr:y="290" id="sv4#miu8" action="true" moduleId="mov2#opm11">
       <OKLink id="sv4#miu8#oln54" name="OKFlow54" to="sv4#miu9" gr:bendpoints="-201,-55,139,65">
         <LinkParameter id="sv4#miu8#oln54#par218" name="task_PASSING_Task" sourceLinkParameter="sv4#miu7#oln53#par216" target="sv4#miu9.mov2#opm12#icu12#icp27"/>
         <LinkParameter id="sv4#miu8#oln54#par219" name="worker_PASSING_Worker" sourceLinkParameter="sv4#miu7#oln53#par217" target="sv4#miu9.mov2#opm12#icu12#icp28"/>
@@ -89,6 +83,18 @@
       </OKLink>
       <KOLink id="sv4#miu9#kln23" name="KOFlow23" to="sv4#page5#mssu5" gr:bendpoints="-170,23,130,8">
         <LinkParameter id="sv4#miu9#kln23#par221" name="Oh my goodness_Shown Messages" target="sv4#page5#mssu5.shownMessages" source="mov2#opm12#kocu10#ocp5"/>
+      </KOLink>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="1125" gr:y="405" id="sv4#miu2" action="true" moduleId="mov2#opm2">
+      <KOLink id="sv4#miu2#kln10" name="KOFlow10" to="sv4#page11#mssu3">
+        <LinkParameter id="sv4#miu2#kln10#par183" name="msg_Shown Messages" source="mov2#opm2#kocu1#ocp2" target="sv4#page11#mssu3.shownMessages"/>
+      </KOLink>
+      <OKLink id="sv4#miu2#oln75" name="OKFlow75" to="sv4#page11" automaticCoupling="true"/>
+    </ModuleInstanceUnit>
+    <ModuleInstanceUnit gr:x="860" gr:y="400" id="sv4#miu5" action="true" moduleId="mov2#opm3">
+      <OKLink id="sv4#miu5#oln88" name="OKFlow88" to="sv4#page11" automaticCoupling="true"/>
+      <KOLink id="sv4#miu5#kln32" name="KOFlow32" to="sv4#page11#mssu3">
+        <LinkParameter id="sv4#miu5#kln32#par258" name="msg_Shown Messages" source="mov2#opm3#kocu2#ocp6" target="sv4#page11#mssu3.shownMessages"/>
       </KOLink>
     </ModuleInstanceUnit>
   </OperationUnits>
